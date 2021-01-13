@@ -176,23 +176,35 @@ overview %>%
   
 ```
 
-## 2D bio vs phy
+## Custom: 2D phy vs bio
 
 ```{r assign_phy_vars}
 
-phy_vars <- c("fgco2",
-              "fgco2_glob",
-              "fgco2_reg",
-              "spco2",
-              "fice",
-              "Kw",
-              "pco2atm",
-              "alpha",
-              "mld"
-              )
+phy_vars <- c(
+  "fgco2",
+  "fgco2_glob",
+  "fgco2_reg",
+  "spco2",
+  "fice",
+  "Kw",
+  "pco2atm",
+  "alpha",
+  "mld",
+  "tos",
+  "sos",
+  "dissicos",
+  "talkos",
+  "no3os",
+  "po4os",
+  "sios"
+)
 
 
 ```
+
+To support the analysis of surface fluxes, following 2D-variables could be tarred separately:
+
+`r phy_vars`
 
 ```{r phy_file_size}
 
