@@ -7,9 +7,136 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Introduction
+```{r load_libraries}
 
-```{r}
+library(tidyverse)
 
 ```
+
+
+# Load overview tables
+
+File list was created by running:
+
+ls -l > /UP_home/jenmueller/Projects/RECCAP2_CESM_ETHZ_submission/data/overview/CESM_files.txt
+
+while in 
+
+/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split
+
+
+```{r load_overview_tables}
+
+
+tab3 <- read_csv(
+  here::here(
+    "data/overview",
+    "RECCAP2-ocean_data_products_overview - Model_protocol_table3.csv"
+  )
+)
+
+tab3_temp <- tab3 %>% 
+  filter(variable_id == "epc100type / epc1000type") %>% 
+  select(-variable_id)
+
+tab3_temp <- expand_grid(
+  tab3_temp,
+  variable_id = c("epc100hard","epc1000hard","epc100soft","epc1000soft")
+)
+
+tab3 <- tab3 %>% 
+  filter(variable_id != "epc100type / epc1000type")
+
+tab3 <- bind_rows(tab3, tab3_temp)
+rm(tab3_temp)
+
+
+CESM_files <- read_table2("data/overview/CESM_files.txt",
+                          col_names = FALSE,
+                          skip = 1)
+
+
+CESM_files <- CESM_files %>%
+  select(X5, X9) %>%
+  rename(file_size = X5,
+         file_name = X9) %>%
+  mutate(
+    variable_id = str_split(file_name,
+                            pattern = "_CESM",
+                            simplify = TRUE)[, 1],
+    experiment_id = str_sub(string = file_name,-19,-19)
+  ) %>%
+  mutate(
+    experiment_id = if_else(
+      experiment_id %in% c("A", "B", "C", "D"),
+      experiment_id,
+      "ancillary"
+    ),
+    variable_id = if_else(variable_id == "atmpco2", "pco2atm", variable_id),
+    file_size_MB = file_size*1e-6
+  ) %>%
+  select(-c(file_name, file_size))
+
+
+overview <- full_join(tab3, CESM_files) %>%
+  arrange(variable_id)
+
+overview <- overview %>%
+  filter(!is.na(experiment_id))
+
+rm(CESM_files, tab3)
+
+```
+
+# Compare tar variants
+
+## experiment_id
+
+File size by experiment_id:
+
+```{r experiment_id}
+
+overview %>% 
+  group_by(experiment_id) %>% 
+  summarise_at("file_size_MB", sum, na.rm = TRUE) %>% 
+  arrange(file_size_MB, experiment_id)
+
+overview <- overview %>% 
+  filter(experiment_id != "ancillary",
+         !is.na(priority))
+
+```
+
+Ancillary data will be excluded for the following analysis, but needs to be included into one of the tar levels.
+
+## Protocol priority
+
+```{r priority}
+
+overview %>% 
+  group_by(priority) %>% 
+  summarise_at("file_size_MB", sum, na.rm = TRUE)
+  
+```
+
+## Shape
+
+```{r shape}
+
+overview %>% 
+  group_by(shape) %>% 
+  summarise_at("file_size_MB", sum, na.rm = TRUE)
+  
+```
+
+## Shape x priority
+
+```{r shape_priority}
+
+overview %>% 
+  group_by(priority, shape) %>% 
+  summarise_at("file_size_MB", sum, na.rm = TRUE)
+  
+```
+
 
