@@ -18,6 +18,7 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 
 ```{r load_libraries}
 library(tidyverse)
+library(gt)
 ```
 
 ```{r ggplot_theme, include = FALSE}
@@ -94,13 +95,36 @@ overview <- full_join(tab3, CESM_files) %>%
   arrange(variable_id)
 
 overview <- overview %>%
-  filter(!is.na(experiment_id))
+  filter(!is.na(experiment_id),
+         variable_id != "siconc") %>% 
+  mutate(file_size_MB = round(file_size_MB,1))
 
 rm(CESM_files, tab3)
 
 ```
 
-# Compare tar variants
+# Output
+
+Overview table of output files created. For each listed variable, 4 experiment_id (A-D) versions exist.
+
+```{r files_list}
+
+overview %>% 
+  group_by(variable_id, dimension, priority) %>% 
+  summarise_at("file_size_MB", sum, na.rm = TRUE) %>% 
+  arrange(dimension, priority) %>% 
+  gt(
+    rowname_col = "variable_id",
+    groupname_col = c("dimension", "priority"),
+    row_group.sep = " | Priority: "
+  ) %>%
+  summary_rows(groups = TRUE,
+               fns = list(total = "sum"))
+
+```
+
+
+#  Compare tar variants
 
 In the following, the sum of file sizes is calculated for some variants to group the files. Grouping variable
 
@@ -123,52 +147,68 @@ overview <- overview %>%
 
 Ancillary data will be excluded for the following analysis, but needs to be included into one of the tar levels.
 
-## Priority
+## Dimension x priority
 
-```{r priority}
-
-overview %>% 
-  group_by(priority) %>% 
-  summarise_at("file_size_MB", sum, na.rm = TRUE)
-  
-```
-
-## Shape
-
-```{r shape}
+```{r dimension_priority}
 
 overview %>% 
-  group_by(shape) %>% 
-  summarise_at("file_size_MB", sum, na.rm = TRUE)
-  
-```
-
-## Shape x priority
-
-```{r shape_priority}
-
-overview %>% 
-  group_by(priority, shape) %>% 
+  group_by(dimension, priority) %>% 
   summarise_at("file_size_MB", sum, na.rm = TRUE)
   
 ```
 
 
-## Shape x priority x experiment_ID
+## Dimension x experiment_ID
 
-```{r shape_priority_experiment}
+```{r dimension_experiment}
 
 overview %>% 
-  group_by(priority, shape, experiment_id) %>% 
+  group_by(dimension, experiment_id) %>% 
   summarise_at("file_size_MB", sum, na.rm = TRUE)
   
 ```
 
-## Custom
+## Dimension x priority x experiment_ID
 
-### Surface bio vs phy
+```{r dimension_priority_experiment}
 
-```{r assign_bio_phy}
+overview %>% 
+  group_by(dimension, priority, experiment_id) %>% 
+  summarise_at("file_size_MB", sum, na.rm = TRUE)
+  
+```
 
+## 2D bio vs phy
+
+```{r assign_phy_vars}
+
+phy_vars <- c("fgco2",
+              "fgco2_glob",
+              "fgco2_reg",
+              "spco2",
+              "fice",
+              "Kw",
+              "pco2atm",
+              "alpha",
+              "mld"
+              )
+
+
+```
+
+```{r phy_file_size}
+
+overview <- overview %>%
+  mutate(tar = case_when(
+    variable_id %in% phy_vars &
+      dimension == "2D" ~ "phy_surf",
+    TRUE ~ "rest"
+  ))
+
+overview %>% 
+  group_by(tar, dimension) %>% 
+  summarise_at("file_size_MB", sum, na.rm = TRUE)
+  
+  
 ```
 
