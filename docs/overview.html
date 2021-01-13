@@ -536,16 +536,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree87263edcafba94bf60c62a1c566db8d08d2c3b68targetblank87263eda"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/87263edcafba94bf60c62a1c566db8d08d2c3b68" target="_blank">87263ed</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree8e6db0fadbecebc7e360d6bd4460b8f1d674be35targetblank8e6db0fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/8e6db0fadbecebc7e360d6bd4460b8f1d674be35" target="_blank">8e6db0f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree87263edcafba94bf60c62a1c566db8d08d2c3b68targetblank87263eda" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree8e6db0fadbecebc7e360d6bd4460b8f1d674be35targetblank8e6db0fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/87263edcafba94bf60c62a1c566db8d08d2c3b68" target="_blank">87263ed</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/8e6db0fadbecebc7e360d6bd4460b8f1d674be35" target="_blank">8e6db0f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -599,6 +599,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/8e6db0fadbecebc7e360d6bd4460b8f1d674be35/analysis/overview.Rmd" target="_blank">8e6db0f</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-01-13
+</td>
+<td>
+compute file sizes
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/c22d518f438fb4d38d5fe2e5a0fa8bb4c7fd79b6/docs/overview.html" target="_blank">c22d518</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-01-13
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1610,18 +1644,28 @@ rm(CESM_files, tab3)</code></pre>
 19 3D               2 C                    2426 
 20 3D               2 D                    2426 </code></pre>
 </div>
-<div id="d-bio-vs-phy" class="section level2" number="3.5">
-<h2 number="3.5"><span class="header-section-number">3.5</span> 2D bio vs phy</h2>
-<pre class="r"><code>phy_vars &lt;- c(&quot;fgco2&quot;,
-              &quot;fgco2_glob&quot;,
-              &quot;fgco2_reg&quot;,
-              &quot;spco2&quot;,
-              &quot;fice&quot;,
-              &quot;Kw&quot;,
-              &quot;pco2atm&quot;,
-              &quot;alpha&quot;,
-              &quot;mld&quot;
-              )</code></pre>
+<div id="custom-2d-phy-vs-bio" class="section level2" number="3.5">
+<h2 number="3.5"><span class="header-section-number">3.5</span> Custom: 2D phy vs bio</h2>
+<pre class="r"><code>phy_vars &lt;- c(
+  &quot;fgco2&quot;,
+  &quot;fgco2_glob&quot;,
+  &quot;fgco2_reg&quot;,
+  &quot;spco2&quot;,
+  &quot;fice&quot;,
+  &quot;Kw&quot;,
+  &quot;pco2atm&quot;,
+  &quot;alpha&quot;,
+  &quot;mld&quot;,
+  &quot;tos&quot;,
+  &quot;sos&quot;,
+  &quot;dissicos&quot;,
+  &quot;talkos&quot;,
+  &quot;no3os&quot;,
+  &quot;po4os&quot;,
+  &quot;sios&quot;
+)</code></pre>
+<p>To support the analysis of surface fluxes, following 2D-variables could be tarred separately:</p>
+<p>fgco2, fgco2_glob, fgco2_reg, spco2, fice, Kw, pco2atm, alpha, mld, tos, sos, dissicos, talkos, no3os, po4os, sios</p>
 <pre class="r"><code>overview &lt;- overview %&gt;%
   mutate(tar = case_when(
     variable_id %in% phy_vars &amp;
@@ -1636,8 +1680,8 @@ overview %&gt;%
 # Groups:   tar [2]
   tar      dimension file_size_MB
   &lt;chr&gt;    &lt;chr&gt;            &lt;dbl&gt;
-1 phy_surf 2D               2911.
-2 rest     2D              11160.
+1 phy_surf 2D               6308.
+2 rest     2D               7763.
 3 rest     3D              21834 </code></pre>
 <br>
 <p>
