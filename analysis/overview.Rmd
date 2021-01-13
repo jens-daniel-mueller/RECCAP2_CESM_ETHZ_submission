@@ -25,7 +25,7 @@ library(gt)
 theme_set(theme_bw())
 ```
 
-# Load overview tables
+# Load data
 
 This analysis is based on Table 3 of the RECCAP2-ocean protocol for model output, and statistics of the ETHZ CESM model output.
 
@@ -103,9 +103,9 @@ rm(CESM_files, tab3)
 
 ```
 
-# Output
+# Overview CESM output
 
-Overview table of output files created. For each listed variable, 4 experiment_id (A-D) versions exist.
+Overview table of output files created. Please note, that for each listed variable, `four experiment_id (A-D) versions` exist.
 
 ```{r files_list}
 
@@ -126,11 +126,9 @@ overview %>%
 
 #  Compare tar variants
 
-In the following, the sum of file sizes is calculated for some variants to group the files. Grouping variable
+In the following, the sum of file sizes is calculated for some variants to group the files. Grouping variables are named according to Table 3 in the model protocol.
 
 ## experiment_id
-
-File size by experiment_id:
 
 ```{r experiment_id}
 
@@ -145,9 +143,9 @@ overview <- overview %>%
 
 ```
 
-Ancillary data will be excluded for the following analysis, but needs to be included into one of the tar levels.
+Ancillary data will be excluded for the following analysis, but needs to be included into one of the tar levels, or provided seperately.
 
-## Dimension x priority
+## dimension x priority
 
 ```{r dimension_priority}
 
@@ -158,7 +156,7 @@ overview %>%
 ```
 
 
-## Dimension x experiment_ID
+## dimension x experiment_ID
 
 ```{r dimension_experiment}
 
@@ -168,7 +166,7 @@ overview %>%
   
 ```
 
-## Dimension x priority x experiment_ID
+## dimension x priority x experiment_ID
 
 ```{r dimension_priority_experiment}
 
