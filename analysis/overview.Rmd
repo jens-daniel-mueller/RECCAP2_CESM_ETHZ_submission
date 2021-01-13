@@ -26,13 +26,15 @@ theme_set(theme_bw())
 
 # Load overview tables
 
-File list was created by running:
+This analysis is based on Table 3 of the RECCAP2-ocean protocol for model output, and statistics of the ETHZ CESM model output.
 
-ls -l > /UP_home/jenmueller/Projects/RECCAP2_CESM_ETHZ_submission/data/overview/CESM_files.txt
+The fle list of the ETHZ CESM model output was created by running:
 
-while in 
+`ls -l > /UP_home/jenmueller/Projects/RECCAP2_CESM_ETHZ_submission/data/overview/CESM_files.txt`
 
-/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split
+while in folder: 
+
+`/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split`
 
 
 ```{r load_overview_tables}
