@@ -539,16 +539,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree3374f394379385c2293214b7f20670719fe586dftargetblank3374f39a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/3374f394379385c2293214b7f20670719fe586df" target="_blank">3374f39</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreec8ab45f7e3b521752665177aea82e9a4414f2c59targetblankc8ab45fa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/c8ab45f7e3b521752665177aea82e9a4414f2c59" target="_blank">c8ab45f</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree3374f394379385c2293214b7f20670719fe586dftargetblank3374f39a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreec8ab45f7e3b521752665177aea82e9a4414f2c59targetblankc8ab45fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/3374f394379385c2293214b7f20670719fe586df" target="_blank">3374f39</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/c8ab45f7e3b521752665177aea82e9a4414f2c59" target="_blank">c8ab45f</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -609,6 +609,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/c8ab45f7e3b521752665177aea82e9a4414f2c59/analysis/regions.Rmd" target="_blank">c8ab45f</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+<td>
+plot regions
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/regions.html" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/3374f394379385c2293214b7f20670719fe586df/analysis/regions.Rmd" target="_blank">3374f39</a>
 </td>
 <td>
@@ -646,6 +680,43 @@ region_masks_all %&gt;%
   geom_raster() +
   coord_quickmap(expand = 0)</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-1">
+Past versions of region_masks_all-1.png
+</button>
+</p>
+<div id="fig-region_masks_all-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-1.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>region_masks_all_seamask &lt;- region_masks_all %&gt;%
   select(lat, lon, seamask)
 
@@ -669,6 +740,43 @@ unique(region_masks_all$value)</code></pre>
   scale_fill_brewer(palette = &quot;Dark2&quot;) +
   coord_quickmap(expand = 0)</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-2">
+Past versions of region_masks_all-2.png
+</button>
+</p>
+<div id="fig-region_masks_all-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-2.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>region_masks_all %&gt;%
   filter(value != 0) %&gt;%
   ggplot(aes(lon, lat, fill = value)) +
@@ -676,6 +784,43 @@ unique(region_masks_all$value)</code></pre>
   coord_quickmap(expand = 0) +
   labs(title = &quot;all regions&quot;)</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-3">
+Past versions of region_masks_all-3.png
+</button>
+</p>
+<div id="fig-region_masks_all-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-3.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>region_masks_all %&gt;%
   filter(value != 0) %&gt;%
   group_split(region) %&gt;%
@@ -690,24 +835,283 @@ unique(region_masks_all$value)</code></pre>
   )</code></pre>
 <pre><code>[[1]]</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-4">
+Past versions of region_masks_all-4.png
+</button>
+</p>
+<div id="fig-region_masks_all-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-4.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[2]]</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-5">
+Past versions of region_masks_all-5.png
+</button>
+</p>
+<div id="fig-region_masks_all-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-5.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[3]]</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-6">
+Past versions of region_masks_all-6.png
+</button>
+</p>
+<div id="fig-region_masks_all-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-6.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[4]]</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-7">
+Past versions of region_masks_all-7.png
+</button>
+</p>
+<div id="fig-region_masks_all-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-7.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[5]]</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-8">
+Past versions of region_masks_all-8.png
+</button>
+</p>
+<div id="fig-region_masks_all-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-8.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[6]]</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-9">
+Past versions of region_masks_all-9.png
+</button>
+</p>
+<div id="fig-region_masks_all-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-9.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>
 [[7]]</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-10">
+Past versions of region_masks_all-10.png
+</button>
+</p>
+<div id="fig-region_masks_all-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-10.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>ggplot() +
   geom_raster(data = region_masks_all %&gt;% filter(value != 0),
               aes(lon, lat, fill = region)) +
@@ -715,6 +1119,43 @@ unique(region_masks_all$value)</code></pre>
               aes(lon, lat)) +
   coord_quickmap(expand = 0)</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-region_masks_all-11">
+Past versions of region_masks_all-11.png
+</button>
+</p>
+<div id="fig-region_masks_all-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/region_masks_all-11.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="openocean_1deg" class="section level2" number="1.2">
 <h2 number="1.2"><span class="header-section-number">1.2</span> openocean_1deg</h2>
@@ -731,31 +1172,150 @@ openocean_1deg %&gt;%
   scale_fill_brewer(palette = &quot;Dark2&quot;) +
   coord_quickmap(expand = 0)</code></pre>
 <p><img src="figure/regions.Rmd/openocean_1deg-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-openocean_1deg-1">
+Past versions of openocean_1deg-1.png
+</button>
+</p>
+<div id="fig-openocean_1deg-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/openocean_1deg-1.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="r"><code>openocean_1deg_seamask &lt;- openocean_1deg %&gt;%
+  select(lat, lon, seamask)
+
+ggplot() +
+  geom_raster(data = openocean_1deg %&gt;%
+                filter(seamask != 0),
+              aes(lon, lat, fill = &quot;seamask&quot;)) +
+  geom_raster(data = openocean_1deg %&gt;%
+                filter(reccap2_ocean_regions != 0),
+              aes(lon, lat, fill = reccap2_ocean_regions)) +
+  scale_fill_brewer(palette = &quot;Dark2&quot;) +
+  coord_quickmap(expand = 0)</code></pre>
+<p><img src="figure/regions.Rmd/openocean_1deg-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-openocean_1deg-2">
+Past versions of openocean_1deg-2.png
+</button>
+</p>
+<div id="fig-openocean_1deg-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/openocean_1deg-2.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>openocean_1deg &lt;- openocean_1deg %&gt;%
+  filter(reccap2_ocean_regions != 0) %&gt;% 
+  select(-seamask)
+
+openocean_1deg &lt;- openocean_1deg %&gt;%
   pivot_longer(atlantic:southern,
                names_to = &quot;region&quot;,
                values_to = &quot;value&quot;) %&gt;%
   filter(value != 0)
 
-openocean_1deg %&gt;%
-  filter(region != &quot;seamask&quot;) %&gt;%
-  ggplot(aes(lon, lat, fill = value)) +
-  geom_raster() +
+ggplot() +
+  geom_raster(data = openocean_1deg_seamask %&gt;%
+                filter(seamask == 0),
+              aes(lon, lat)) +
+  geom_raster(data = openocean_1deg,
+              aes(lon, lat, fill = value)) +
   scale_fill_brewer(palette = &quot;Dark2&quot;) +
-  coord_quickmap(expand = 0)</code></pre>
-<p><img src="figure/regions.Rmd/openocean_1deg-2.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>openocean_1deg &lt;- openocean_1deg %&gt;%
-  select(-value)
-
-openocean_1deg %&gt;%
-  filter(region != &quot;seamask&quot;) %&gt;%
-  ggplot(aes(lon, lat, fill = region)) +
-  geom_raster() +
-  scale_fill_brewer(palette = &quot;Dark2&quot;) +
-  coord_quickmap(expand = 0)</code></pre>
+  coord_quickmap(expand = 0) +
+  facet_wrap(~region)</code></pre>
 <p><img src="figure/regions.Rmd/openocean_1deg-3.png" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>openocean_1deg &lt;- openocean_1deg %&gt;%
-  select(lat, lon, region)</code></pre>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-openocean_1deg-3">
+Past versions of openocean_1deg-3.png
+</button>
+</p>
+<div id="fig-openocean_1deg-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/73f18f3dbbefcf0d692a434bd161c99c12098d43/docs/figure/regions.Rmd/openocean_1deg-3.png" target="_blank">73f18f3</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
