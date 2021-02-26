@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Jens Daniel Müller" />
 
 
-<title>Home</title>
+<title>Regions</title>
 
 <script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -20,6 +21,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
@@ -276,6 +280,75 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
 
 </head>
 
@@ -283,6 +356,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -338,7 +421,9 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Home</h1>
+<h1 class="title toc-ignore">Regions</h1>
+<h4 class="author">Jens Daniel Müller</h4>
+<h4 class="date">26 February, 2021</h4>
 
 </div>
 
@@ -495,7 +580,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/regions.Rmd</code>) and HTML (<code>docs/regions.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -524,7 +609,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/3374f394379385c2293214b7f20670719fe586df/analysis/index.Rmd" target="_blank">3374f39</a>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/3374f394379385c2293214b7f20670719fe586df/analysis/regions.Rmd" target="_blank">3374f39</a>
 </td>
 <td>
 jens-daniel-mueller
@@ -536,295 +621,6 @@ jens-daniel-mueller
 plot regions
 </td>
 </tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/a79220adc4392b9e1ec8a162bcbc0c088ec3786a/docs/index.html" target="_blank">a79220a</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/c22d518f438fb4d38d5fe2e5a0fa8bb4c7fd79b6/docs/index.html" target="_blank">c22d518</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/84feb00d1c3230ba0c70a999ac7bf83e8e433566/docs/index.html" target="_blank">84feb00</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/4c87be2e9abbd9ca49c7d69f275ed675b62bfcd2/docs/index.html" target="_blank">4c87be2</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/81ae5ed675ba706faf407c029b97a15df27ec0b0/docs/index.html" target="_blank">81ae5ed</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/dad12a3ce426531cfc7fa2e9bfc290e9dc9ad27a/docs/index.html" target="_blank">dad12a3</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/4c9a77f414b9fe4dc5f0967ba307abcca207f0b9/analysis/index.Rmd" target="_blank">4c9a77f</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-formatting html output
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/496f8424bf1b73a88741e207f81d0e7e81d7f0a7/docs/index.html" target="_blank">496f842</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/eb798b24148aba61fd44343776bf0cbec167204d/analysis/index.Rmd" target="_blank">eb798b2</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-formatting html output
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/4d1bb9abea2cb24bf81774b2e6ea5e54f93530f2/docs/index.html" target="_blank">4d1bb9a</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/2734e374521f0c8acdfc71002141f345441584ef/docs/index.html" target="_blank">2734e37</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/8e3967c4bda04ba3999ad849fac4c12ac885b8ef/docs/index.html" target="_blank">8e3967c</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/7ac82a4b2de9882f7616fa6630c366054b6cd5e3/analysis/index.Rmd" target="_blank">7ac82a4</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Publish with source code link
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/5ecfd7e52467e9eeff9195b889f5cba727b69fe0/docs/index.html" target="_blank">5ecfd7e</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/a59b45e70ea2c70e0a69b7dfe358e8cceb471b2b/docs/index.html" target="_blank">a59b45e</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/a80f5676628f6ecab24d07d7030c49744cbd76a2/docs/index.html" target="_blank">a80f567</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/0bc065874d9d62725ce4680ad2f1b46b0f18d039/analysis/index.Rmd" target="_blank">0bc0658</a>
-</td>
-<td>
-jens-daniel-mueller
-</td>
-<td>
-2021-01-13
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -832,16 +628,134 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>On this website we present some initial analysis of the CESM ETHZ model output submitted to RECCAP2-ocean.</p>
-<p>This initial analysis covers results from 4 model runs (A-D) with annual (3D variables) or monthly (2D variables) temporal resolution. The diagnosis comprises following aspects:</p>
-<ul>
-<li>time series of annual mean <span class="math inline">\(\pm\)</span> SD, min, and max values</li>
-<li>comparison of zonal mean sections against WOA18/GLODAPv2_climatology</li>
-<li>comparison of surface maps against WOA18/GLODAPv2_climatology</li>
-</ul>
-<p>If not stated differently, the above analysis are executed by basin, ie separating the Atlantic, Indian and Pacific Ocean.</p>
-<p>Please navigate trough the navbar on top to take a look at the various chapters of this project. The links in the upper right corner bring you to the source code of this project and back to Jens’ main homepage.</p>
-<p>© Dr. Jens Daniel Müller, ETH Zurich, 2021</p>
+<pre class="r"><code>path_basin_mask &lt;-
+  &quot;/nfs/kryo/work/updata/reccapv2/&quot;</code></pre>
+<div id="region-masks" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Region masks</h1>
+<div id="region_masks_all" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> region_masks_all</h2>
+<pre class="r"><code>region_masks_all &lt;-
+  read_ncdf(paste(path_basin_mask, &quot;RECCAP2_region_masks_all.nc&quot;, sep = &quot;&quot;)) %&gt;%
+  as_tibble()
+
+region_masks_all &lt;- region_masks_all %&gt;%
+  mutate(seamask = as.factor(seamask))
+
+region_masks_all %&gt;%
+  ggplot(aes(lon, lat, fill = seamask)) +
+  geom_raster() +
+  coord_quickmap(expand = 0)</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>region_masks_all_seamask &lt;- region_masks_all %&gt;%
+  select(lat, lon, seamask)
+
+region_masks_all &lt;- region_masks_all %&gt;%
+  select(-seamask)
+
+region_masks_all &lt;- region_masks_all %&gt;%
+  pivot_longer(open_ocean:southern,
+               names_to = &quot;region&quot;,
+               values_to = &quot;value&quot;) %&gt;%
+  mutate(value = as.factor(value))
+
+unique(region_masks_all$value)</code></pre>
+<pre><code> [1] 0  45 5  3  2  36 1  6  35 34 4  24 25 33 37 32 23 26 7  27 38 39 30 31 8 
+[26] 22 28 9  10 29 20 40 19 21 11 41 42 17 12 18 15 16 44 13 43 14
+46 Levels: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 ... 45</code></pre>
+<pre class="r"><code>region_masks_all %&gt;%
+  filter(value != 0) %&gt;%
+  ggplot(aes(lon, lat, fill = region)) +
+  geom_raster() +
+  scale_fill_brewer(palette = &quot;Dark2&quot;) +
+  coord_quickmap(expand = 0)</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>region_masks_all %&gt;%
+  filter(value != 0) %&gt;%
+  ggplot(aes(lon, lat, fill = value)) +
+  geom_raster() +
+  coord_quickmap(expand = 0) +
+  labs(title = &quot;all regions&quot;)</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>region_masks_all %&gt;%
+  filter(value != 0) %&gt;%
+  group_split(region) %&gt;%
+  map(
+    ~ ggplot() +
+      geom_raster(data = region_masks_all_seamask %&gt;% filter(seamask == 0),
+                  aes(lon, lat)) +
+      geom_raster(data = .x,
+                  aes(lon, lat, fill = value)) +
+      coord_quickmap(expand = 0) +
+      labs(title = paste(&quot;region:&quot;, unique(.x$region)))
+  )</code></pre>
+<pre><code>[[1]]</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[2]]</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[3]]</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-6.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[4]]</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-7.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[5]]</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-8.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[6]]</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-9.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>
+[[7]]</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-10.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>ggplot() +
+  geom_raster(data = region_masks_all %&gt;% filter(value != 0),
+              aes(lon, lat, fill = region)) +
+  geom_raster(data = region_masks_all_seamask %&gt;% filter(seamask == 1),
+              aes(lon, lat)) +
+  coord_quickmap(expand = 0)</code></pre>
+<p><img src="figure/regions.Rmd/region_masks_all-11.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="openocean_1deg" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> openocean_1deg</h2>
+<pre class="r"><code>openocean_1deg &lt;-
+  read_ncdf(paste(path_basin_mask, &quot;RECCAP2_openocean_1deg.nc&quot;, sep = &quot;&quot;)) %&gt;%
+  as_tibble()
+
+openocean_1deg &lt;- openocean_1deg %&gt;%
+  mutate_at(vars(&quot;reccap2_ocean_regions&quot;:&quot;seamask&quot;), as.factor)
+
+openocean_1deg %&gt;%
+  ggplot(aes(lon, lat, fill = reccap2_ocean_regions)) +
+  geom_raster() +
+  scale_fill_brewer(palette = &quot;Dark2&quot;) +
+  coord_quickmap(expand = 0)</code></pre>
+<p><img src="figure/regions.Rmd/openocean_1deg-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>openocean_1deg &lt;- openocean_1deg %&gt;%
+  pivot_longer(atlantic:southern,
+               names_to = &quot;region&quot;,
+               values_to = &quot;value&quot;) %&gt;%
+  filter(value != 0)
+
+openocean_1deg %&gt;%
+  filter(region != &quot;seamask&quot;) %&gt;%
+  ggplot(aes(lon, lat, fill = value)) +
+  geom_raster() +
+  scale_fill_brewer(palette = &quot;Dark2&quot;) +
+  coord_quickmap(expand = 0)</code></pre>
+<p><img src="figure/regions.Rmd/openocean_1deg-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>openocean_1deg &lt;- openocean_1deg %&gt;%
+  select(-value)
+
+openocean_1deg %&gt;%
+  filter(region != &quot;seamask&quot;) %&gt;%
+  ggplot(aes(lon, lat, fill = region)) +
+  geom_raster() +
+  scale_fill_brewer(palette = &quot;Dark2&quot;) +
+  coord_quickmap(expand = 0)</code></pre>
+<p><img src="figure/regions.Rmd/openocean_1deg-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>openocean_1deg &lt;- openocean_1deg %&gt;%
+  select(lat, lon, region)</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -870,17 +784,40 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] workflowr_1.6.2
+ [1] tidync_0.2.4    stars_0.4-3     sf_0.9-6        abind_1.4-5    
+ [5] metR_0.9.0      scico_1.2.0     patchwork_1.1.1 collapse_1.5.0 
+ [9] forcats_0.5.0   stringr_1.4.0   dplyr_1.0.2     purrr_0.3.4    
+[13] readr_1.4.0     tidyr_1.1.2     tibble_3.0.4    ggplot2_3.3.2  
+[17] tidyverse_1.3.0 workflowr_1.6.2
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.5      rstudioapi_0.13 whisker_0.4     knitr_1.30     
- [5] magrittr_1.5    R6_2.5.0        rlang_0.4.9     stringr_1.4.0  
- [9] tools_4.0.3     xfun_0.18       git2r_0.27.1    htmltools_0.5.0
-[13] ellipsis_0.3.1  rprojroot_2.0.2 yaml_2.2.1      digest_0.6.27  
-[17] tibble_3.0.4    lifecycle_0.2.0 crayon_1.3.4    later_1.1.0.1  
-[21] vctrs_0.3.5     promises_1.1.1  fs_1.5.0        glue_1.4.2     
-[25] evaluate_0.14   rmarkdown_2.5   stringi_1.5.3   compiler_4.0.3 
-[29] pillar_1.4.7    httpuv_1.5.4    pkgconfig_2.0.3</code></pre>
+ [1] fs_1.5.0                 lubridate_1.7.9          RColorBrewer_1.1-2      
+ [4] httr_1.4.2               rprojroot_2.0.2          tools_4.0.3             
+ [7] backports_1.1.10         R6_2.5.0                 KernSmooth_2.23-17      
+[10] DBI_1.1.0                colorspace_1.4-1         withr_2.3.0             
+[13] tidyselect_1.1.0         compiler_4.0.3           git2r_0.27.1            
+[16] cli_2.1.0                rvest_0.3.6              RNetCDF_2.4-2           
+[19] xml2_1.3.2               labeling_0.4.2           scales_1.1.1            
+[22] checkmate_2.0.0          classInt_0.4-3           digest_0.6.27           
+[25] rmarkdown_2.5            pkgconfig_2.0.3          htmltools_0.5.0         
+[28] dbplyr_1.4.4             rlang_0.4.9              readxl_1.3.1            
+[31] rstudioapi_0.13          generics_0.0.2           farver_2.0.3            
+[34] jsonlite_1.7.1           magrittr_1.5             ncmeta_0.3.0            
+[37] Matrix_1.2-18            Rcpp_1.0.5               munsell_0.5.0           
+[40] fansi_0.4.1              lifecycle_0.2.0          stringi_1.5.3           
+[43] whisker_0.4              yaml_2.2.1               grid_4.0.3              
+[46] blob_1.2.1               parallel_4.0.3           promises_1.1.1          
+[49] crayon_1.3.4             lattice_0.20-41          haven_2.3.1             
+[52] hms_0.5.3                knitr_1.30               pillar_1.4.7            
+[55] reprex_0.3.0             glue_1.4.2               evaluate_0.14           
+[58] RcppArmadillo_0.10.1.2.0 data.table_1.13.2        modelr_0.1.8            
+[61] vctrs_0.3.5              httpuv_1.5.4             cellranger_1.1.0        
+[64] gtable_0.3.0             assertthat_0.2.1         xfun_0.18               
+[67] lwgeom_0.2-5             broom_0.7.2              RcppEigen_0.3.3.7.0     
+[70] e1071_1.7-4              later_1.1.0.1            class_7.3-17            
+[73] ncdf4_1.17               units_0.6-7              ellipsis_0.3.1          </code></pre>
+</div>
+</div>
 </div>
 
 
@@ -899,6 +836,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -936,6 +875,32 @@ $(document).ready(function () {
 });
 </script>
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
