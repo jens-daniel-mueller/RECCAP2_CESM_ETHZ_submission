@@ -89,8 +89,6 @@ region_masks_all %>%
       labs(title = paste("region:", unique(.x$region)))
   )
 
-
-
 ggplot() +
   geom_raster(data = region_masks_all %>% filter(value != 0),
               aes(lon, lat, fill = region)) +
@@ -105,7 +103,6 @@ ggplot() +
 
 ```{r openocean_1deg}
 
-
 openocean_1deg <-
   read_ncdf(paste(path_basin_mask, "RECCAP2_openocean_1deg.nc", sep = "")) %>%
   as_tibble()
@@ -119,31 +116,39 @@ openocean_1deg %>%
   scale_fill_brewer(palette = "Dark2") +
   coord_quickmap(expand = 0)
 
+openocean_1deg_seamask <- openocean_1deg %>%
+  select(lat, lon, seamask)
+
+ggplot() +
+  geom_raster(data = openocean_1deg %>%
+                filter(seamask != 0),
+              aes(lon, lat, fill = "seamask")) +
+  geom_raster(data = openocean_1deg %>%
+                filter(reccap2_ocean_regions != 0),
+              aes(lon, lat, fill = reccap2_ocean_regions)) +
+  scale_fill_brewer(palette = "Dark2") +
+  coord_quickmap(expand = 0)
+
+
+openocean_1deg <- openocean_1deg %>%
+  filter(reccap2_ocean_regions != 0) %>% 
+  select(-seamask)
+
 openocean_1deg <- openocean_1deg %>%
   pivot_longer(atlantic:southern,
                names_to = "region",
                values_to = "value") %>%
   filter(value != 0)
 
-openocean_1deg %>%
-  filter(region != "seamask") %>%
-  ggplot(aes(lon, lat, fill = value)) +
-  geom_raster() +
+ggplot() +
+  geom_raster(data = openocean_1deg_seamask %>%
+                filter(seamask == 0),
+              aes(lon, lat)) +
+  geom_raster(data = openocean_1deg,
+              aes(lon, lat, fill = value)) +
   scale_fill_brewer(palette = "Dark2") +
-  coord_quickmap(expand = 0)
-
-openocean_1deg <- openocean_1deg %>%
-  select(-value)
-
-openocean_1deg %>%
-  filter(region != "seamask") %>%
-  ggplot(aes(lon, lat, fill = region)) +
-  geom_raster() +
-  scale_fill_brewer(palette = "Dark2") +
-  coord_quickmap(expand = 0)
-
-openocean_1deg <- openocean_1deg %>%
-  select(lat, lon, region)
+  coord_quickmap(expand = 0) +
+  facet_wrap(~region)
 
 ```
 
