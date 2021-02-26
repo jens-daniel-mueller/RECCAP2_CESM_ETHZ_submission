@@ -152,3 +152,24 @@ ggplot() +
 
 ```
 
+## RECCAP2_coastal_MARCAT_1deg
+
+```{r RECCAP2_coastal_MARCAT_1deg}
+
+RECCAP2_coastal_MARCAT_1deg <-
+  read_ncdf(paste(path_basin_mask, "RECCAP2_coastal_MARCAT_1deg.nc", sep = "")) %>%
+  as_tibble()
+
+RECCAP2_coastal_MARCAT_1deg <- RECCAP2_coastal_MARCAT_1deg %>%
+  rename("region" = "__xarray_dataarray_variable__") %>% 
+  filter(!is.na(region)) %>% 
+  mutate_at(vars("region"), as.factor)
+
+RECCAP2_coastal_MARCAT_1deg %>%
+  ggplot(aes(lon, lat, fill = region)) +
+  geom_raster() +
+  coord_quickmap(expand = 0)
+
+
+```
+
