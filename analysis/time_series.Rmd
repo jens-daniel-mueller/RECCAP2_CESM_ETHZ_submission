@@ -122,10 +122,12 @@ for (i_model_ID in model_IDs) {
     # remove open link to nc file
     rm(variable_data)
     
+    print(
     variable_data_tibble %>%
       ggplot(aes(time_mon,
                  !!sym(i_variable))) +
       geom_path()
+    )
     
   }
 }

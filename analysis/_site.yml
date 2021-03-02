@@ -3,10 +3,12 @@ output_dir: ../docs
 navbar:
   title: RECCAP2_CESM_ETHZ_submission
   left:
-  - text: Home
-    href: index.html
   - text: Overview
     href: overview.html
+  - text: Regions
+    href: regions.html
+  - text: Time series
+    href: time_series.html
   right:
   - icon: fa-github
     text: Source code
