@@ -158,23 +158,23 @@ for (i_experiment_ID in experiment_IDs) {
     variable_data_tibble_climatology <-
       variable_data_tibble %>% 
       group_by(lat, lon) %>% 
-      summarise(!!paste(sym(i_variable),"mean",sep = "_") := mean(!!sym(i_variable), na.rm = TRUE),
-                !!paste(sym(i_variable),"min",sep = "_") := min(!!sym(i_variable), na.rm = TRUE),
-                !!paste(sym(i_variable),"max",sep = "_") := max(!!sym(i_variable), na.rm = TRUE)) %>%
+      summarise("mean" := mean(!!sym(i_variable), na.rm = TRUE),
+                "min"  := min(!!sym(i_variable), na.rm = TRUE),
+                "max"  := max(!!sym(i_variable), na.rm = TRUE)) %>%
       ungroup() 
     
     variable_data_tibble_climatology <- variable_data_tibble_climatology %>% 
-      pivot_longer(starts_with(i_variable),
-                   values_to = "value",
+      pivot_longer(c("mean", "min", "max"),
+                   values_to = i_variable,
                    names_to = "parameter")
     
     print(
     variable_data_tibble_climatology %>% 
-      ggplot(aes(lon, lat, fill=value)) +
+      ggplot(aes(lon, lat, fill=!!sym(i_variable))) +
       geom_raster() +
       scale_fill_viridis_c() +
       coord_quickmap(expand = 0) +
-      facet_grid(.~parameter) +
+      facet_wrap(~parameter, ncol = 2) +
       theme(axis.title = element_blank()) +
       labs(title = paste("experiment_ID:", i_experiment_ID))
     )
