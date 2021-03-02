@@ -217,6 +217,113 @@ for (i_experiment_ID in experiment_IDs) {
 
 ```
 
+## 3D variables (XYZT)
+
+Comments:
+
+- 
+
+```{r 3D_variables, fig.asp=0.5}
+
+# for loop across variables
+variables <-
+  overview %>% 
+  filter(shape == "XYZT") %>% 
+  distinct(variable_id) %>% 
+  pull()
+
+# variables <- variables[1]
+# experiment_IDs <- experiment_IDs[1]
+
+for (i_experiment_ID in experiment_IDs) {
+  for (i_variable in variables) {
+    
+    # i_experiment_ID <- experiment_IDs[1]
+    # i_variable <- variables[1]
+    
+    # read list of all files
+    file <- paste(i_variable,
+                  "_CESM-ETHZ_",
+                  i_experiment_ID,
+                  "_1_gr_1980-2018.nc",
+                  sep = "")
+    print(file)
+    
+    # read in data
+    variable_data <-
+      tidync(paste(path_cmorized_annual,
+                   file,
+                   sep = ""))
+    
+    # convert to tibble
+    variable_data_tibble <- variable_data %>%
+      hyper_tibble()
+    
+        # remove open link to nc file
+    rm(variable_data)
+    
+    variable_data_tibble_climatology <-
+      variable_data_tibble %>% 
+      group_by(depth) %>% 
+      summarise("mean" := mean(!!sym(i_variable), na.rm = TRUE),
+                "min"  := min(!!sym(i_variable), na.rm = TRUE),
+                "max"  := max(!!sym(i_variable), na.rm = TRUE)) %>%
+      ungroup() 
+    
+    print(
+      variable_data_tibble_climatology %>%
+        arrange(depth) %>%
+        ggplot() +
+        geom_ribbon(aes(
+          xmin = min, xmax = max, y = depth
+        ), alpha = 0.3) +
+        geom_path(aes(mean, depth)) +
+        scale_y_reverse()  +
+        scale_fill_viridis_d() +
+        scale_color_viridis_d() +
+        labs(
+          title = paste("experiment_ID:", i_experiment_ID),
+          y = i_variable
+        ) +
+        theme(legend.title = element_blank())
+    )
+    
+    # variable_data_tibble_time_series <-
+    #   variable_data_tibble %>% 
+    #   group_by(time_mon) %>% 
+    #   summarise("mean" := mean(!!sym(i_variable), na.rm = TRUE),
+    #             "min"  := min(!!sym(i_variable), na.rm = TRUE),
+    #             "max"  := max(!!sym(i_variable), na.rm = TRUE)) %>%
+    #   ungroup() 
+    # 
+    # print(
+    #   variable_data_tibble_time_series %>%
+    #     ggplot() +
+    #     geom_ribbon(aes(
+    #       x = time_mon,
+    #       ymin = min,
+    #       ymax = max,
+    #       fill = "min/max"
+    #     ), alpha = 0.3) +
+    #     geom_path(aes(
+    #       x = time_mon,
+    #       y = mean,
+    #       col  = "mean"
+    #     )) +
+    #     scale_fill_viridis_d() +
+    #     scale_color_viridis_d() +
+    #     labs(title = paste("experiment_ID:", i_experiment_ID),
+    #          y = i_variable
+    #     ) +
+    #     theme(legend.title = element_blank())
+    # )
+    # 
+       
+  }
+}
+
+```
+
 
 ```{r 2D_variables_wait, eval=FALSE}
 
