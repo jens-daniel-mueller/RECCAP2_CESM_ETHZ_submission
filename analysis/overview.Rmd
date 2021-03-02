@@ -101,6 +101,9 @@ overview <- overview %>%
 
 rm(CESM_files, tab3)
 
+overview %>% 
+  write_csv("data/overview/overview_files.csv")
+
 ```
 
 # Overview CESM output

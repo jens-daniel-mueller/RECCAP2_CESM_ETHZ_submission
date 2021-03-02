@@ -20,31 +20,17 @@ editor_options:
 
 ```{r define_paths}
 
-path_GLODAP_preprocessing <-
-  paste(path_root, "/observations/preprocessing/", sep = "")
-
 path_cmorized_annual <-
   "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/"
-
-path_basin_mask <-
-  "/nfs/kryo/work/updata/reccapv2/"
 
 ```
 
 ```{r load_libraries_specific, include=FALSE}
 library(stars)
-library(lubridate)
-library(rqdatatable)
-library(gsw)
-library(marelac)
-library(oce)
-library(reticulate)
 library(tidync)
 ```
 
 # Region masks
-
-## region_masks_all
 
 ```{r region_masks_all}
 
@@ -53,40 +39,29 @@ region_masks_all <-
 
 ```
 
-# Read GLODAPv2_2020 preprocessed files
+# File names
 
-```{r read_GLODAPv2_2020_preprocessed_file, eval=FALSE}
+```{r read_files_overview}
 
-GLODAP <-
-  read_csv(paste(path_GLODAP_preprocessing,
-                 "GLODAPv2.2020_preprocessed.csv",
-                 sep = ""))
-
-GLODAP <- GLODAP %>%
-  mutate(month = month(date))
+overview <-
+  read_csv("data/overview/overview_files.csv")
 
 ```
 
-# Subset cmorized data according to GLODAP observation
+# Time series plots
 
-Here we subset cmorized (1x1) data from the model with variable forcing, according to the presence of GLODAP observations in a previously cleaned file.
+## iT
 
-Besides, Model results are given in [mol m^-3^], whereas GLODAP data are in [µmol kg^-1^]. This refers to the variables:
+Comments:
 
-- DIC  
-- ALK  
-- O2  
-- NO3  
-- PO4  
-- SiO3
-- AOU (calculated)
+- fgco2_reg
+  - regions not accessible
+  - values seem identical to fgco2_glob
 
-For comparison, model results were converted from [mol m^-3^] to [µmol kg^-1^]
-
-```{r regionally_integrated_2D_variables}
+```{r regionally_integrated_2D_variables, fig.asp=0.5}
 
 # set name of model to be subsetted
-model_IDs <- c("A", "B", "C", "D")
+experiment_IDs <- c("A", "B", "C", "D")
 
 # for loop across variables
 variables <-
@@ -95,16 +70,16 @@ variables <-
     # "fgco2_reg"
   )
 
-for (i_model_ID in model_IDs) {
+for (i_experiment_ID in experiment_IDs) {
   for (i_variable in variables) {
     
-    # i_model_ID <- model_IDs[1]
-    # i_variable <- variables[2]
+    # i_experiment_ID <- experiment_IDs[1]
+    # i_variable <- variables[1]
     
     # read list of all files
     file <- paste(i_variable,
                   "_CESM-ETHZ_",
-                  i_model_ID,
+                  i_experiment_ID,
                   "_1_gr_1980-2018.nc",
                   sep = "")
     print(file)
@@ -126,7 +101,8 @@ for (i_model_ID in model_IDs) {
     variable_data_tibble %>%
       ggplot(aes(time_mon,
                  !!sym(i_variable))) +
-      geom_path()
+      geom_path() +
+      labs(title = paste("experiment_ID:", i_experiment_ID))
     )
     
   }
@@ -134,17 +110,119 @@ for (i_model_ID in model_IDs) {
 
 ```
 
-```{r 2D_variables, eval=FALSE}
 
-# set name of model to be subsetted
-model_ID <- "A"
+## 2D variables (XYT)
+
+Comments:
+
+- 
+
+```{r 2D_variables, fig.asp=0.5}
 
 # for loop across variables
 variables <-
-  c(
-    "fgco2_glob",
-    "fgco2_reg",
-    "fgco2",
+  overview %>% 
+  filter(shape == "XYT") %>% 
+  distinct(variable_id) %>% 
+  pull()
+
+variables <- variables[1]
+
+for (i_experiment_ID in experiment_IDs) {
+  for (i_variable in variables) {
+    
+    # i_experiment_ID <- experiment_IDs[1]
+    # i_variable <- variables[1]
+    
+    # read list of all files
+    file <- paste(i_variable,
+                  "_CESM-ETHZ_",
+                  i_experiment_ID,
+                  "_1_gr_1980-2018.nc",
+                  sep = "")
+    print(file)
+    
+    # read in data
+    variable_data <-
+      tidync(paste(path_cmorized_annual,
+                   file,
+                   sep = ""))
+    
+    # convert to tibble
+    variable_data_tibble <- variable_data %>%
+      hyper_tibble()
+    
+        # remove open link to nc file
+    rm(variable_data)
+    
+    variable_data_tibble_climatology <-
+      variable_data_tibble %>% 
+      group_by(lat, lon) %>% 
+      summarise(!!paste(sym(i_variable),"mean",sep = "_") := mean(!!sym(i_variable), na.rm = TRUE),
+                !!paste(sym(i_variable),"min",sep = "_") := min(!!sym(i_variable), na.rm = TRUE),
+                !!paste(sym(i_variable),"max",sep = "_") := max(!!sym(i_variable), na.rm = TRUE)) %>%
+      ungroup() 
+    
+    variable_data_tibble_climatology <- variable_data_tibble_climatology %>% 
+      pivot_longer(starts_with(i_variable),
+                   values_to = "value",
+                   names_to = "parameter")
+    
+    print(
+    variable_data_tibble_climatology %>% 
+      ggplot(aes(lon, lat, fill=value)) +
+      geom_raster() +
+      scale_fill_viridis_c() +
+      coord_quickmap(expand = 0) +
+      facet_grid(.~parameter) +
+      theme(axis.title = element_blank()) +
+      labs(title = paste("experiment_ID:", i_experiment_ID))
+    )
+    
+    variable_data_tibble_time_series <-
+      variable_data_tibble %>% 
+      group_by(time_mon) %>% 
+      summarise("mean" := mean(!!sym(i_variable), na.rm = TRUE),
+                "min"  := min(!!sym(i_variable), na.rm = TRUE),
+                "max"  := max(!!sym(i_variable), na.rm = TRUE)) %>%
+      ungroup() 
+ 
+    print(
+      variable_data_tibble_time_series %>%
+        ggplot() +
+        geom_ribbon(aes(
+          x = time_mon,
+          ymin = min,
+          ymax = max,
+          fill = "min/max"
+        ), alpha = 0.3) +
+        geom_path(aes(
+          x = time_mon,
+          y = mean,
+          col  = "mean"
+        )) +
+        scale_fill_viridis_d() +
+        scale_color_viridis_d() +
+        labs(title = paste("experiment_ID:", i_experiment_ID),
+             y = i_variable
+        ) +
+        theme(legend.title = element_blank())
+    )
+    
+       
+  }
+}
+
+```
+
+```{r 2D_variables_wait, eval=FALSE}
+
+# set name of model to be subsetted
+experiment_ID <- "A"
+
+# for loop across variables
+variables <-
+  c("fgco2",
     "spco2",
     "fice",
     "intpp",
@@ -187,7 +265,7 @@ for (i_variable in variables) {
   # read list of all files
   file <- paste(i_variable,
                 "_CESM-ETHZ_",
-                model_ID,
+                experiment_ID,
                 "_1_gr_1980-2018.nc",
                 sep = "")
   print(file)
@@ -370,7 +448,7 @@ stats_summary %>%
     paste(
       path_preprocessing,
       "regular_subset_distribution_runA/",
-      model_ID,
+      experiment_ID,
       "_summary_stats.csv",
       sep = ""
     )
