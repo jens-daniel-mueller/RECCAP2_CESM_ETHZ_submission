@@ -93,9 +93,12 @@ ggplot() +
   geom_raster(data = region_masks_all %>% filter(value != 0),
               aes(lon, lat, fill = region)) +
   geom_raster(data = region_masks_all_seamask %>% filter(seamask == 1),
-              aes(lon, lat)) +
+              aes(lon, lat))+
   coord_quickmap(expand = 0)
 
+
+region_masks_all %>% 
+  write_csv("data/regions/RECCAP2_region_masks_all_clean.cvs")
 
 ```
 
