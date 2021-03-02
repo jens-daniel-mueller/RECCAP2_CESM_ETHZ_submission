@@ -388,6 +388,9 @@ div.tocify {
 <li>
   <a href="regions.html">Regions</a>
 </li>
+<li>
+  <a href="time_series.html">Time series</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -423,7 +426,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Regions</h1>
 <h4 class="author">Jens Daniel Müller</h4>
-<h4 class="date">26 February, 2021</h4>
+<h4 class="date">02 March, 2021</h4>
 
 </div>
 
@@ -448,7 +451,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-02-26
+<strong>Last updated:</strong> 2021-03-02
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -539,16 +542,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreedc0cf7dd8cf7b0ace92d70741cbf6abf13d8c93ctargetblankdc0cf7da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/dc0cf7dd8cf7b0ace92d70741cbf6abf13d8c93c" target="_blank">dc0cf7d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree7ee6e9591f649e6e10fc67ae3326f026db63ffcdtargetblank7ee6e95a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/7ee6e9591f649e6e10fc67ae3326f026db63ffcd" target="_blank">7ee6e95</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreedc0cf7dd8cf7b0ace92d70741cbf6abf13d8c93ctargetblankdc0cf7da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree7ee6e9591f649e6e10fc67ae3326f026db63ffcdtargetblank7ee6e95a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/dc0cf7dd8cf7b0ace92d70741cbf6abf13d8c93c" target="_blank">dc0cf7d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/7ee6e9591f649e6e10fc67ae3326f026db63ffcd" target="_blank">7ee6e95</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -560,9 +563,9 @@ Ignored files:
 
 Untracked files:
     Untracked:  analysis/diagnostics.Rmd
-    Untracked:  analysis/time_series.Rmd
     Untracked:  code/Workflowr_project_managment.R
     Untracked:  data/overview/
+    Untracked:  data/regions/
 
 Unstaged changes:
     Modified:   analysis/_site.yml
@@ -604,6 +607,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/7ee6e9591f649e6e10fc67ae3326f026db63ffcd/analysis/regions.Rmd" target="_blank">7ee6e95</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+<td>
+plot spatially integrated time series
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/d5e90cca3a25d7586b77365fa7dd3c8e84e836f7/docs/regions.html" target="_blank">d5e90cc</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1150,7 +1187,7 @@ jens-daniel-mueller
   geom_raster(data = region_masks_all %&gt;% filter(value != 0),
               aes(lon, lat, fill = region)) +
   geom_raster(data = region_masks_all_seamask %&gt;% filter(seamask == 1),
-              aes(lon, lat)) +
+              aes(lon, lat))+
   coord_quickmap(expand = 0)</code></pre>
 <p><img src="figure/regions.Rmd/region_masks_all-11.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1190,6 +1227,8 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
+<pre class="r"><code>region_masks_all %&gt;% 
+  write_csv(&quot;data/regions/RECCAP2_region_masks_all_clean.cvs&quot;)</code></pre>
 </div>
 <div id="openocean_1deg" class="section level2" number="1.2">
 <h2 number="1.2"><span class="header-section-number">1.2</span> openocean_1deg</h2>
@@ -1389,6 +1428,43 @@ RECCAP2_coastal_MARCAT_1deg %&gt;%
   geom_raster() +
   coord_quickmap(expand = 0)</code></pre>
 <p><img src="figure/regions.Rmd/RECCAP2_coastal_MARCAT_1deg-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-RECCAP2_coastal_MARCAT_1deg-1">
+Past versions of RECCAP2_coastal_MARCAT_1deg-1.png
+</button>
+</p>
+<div id="fig-RECCAP2_coastal_MARCAT_1deg-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/d5e90cca3a25d7586b77365fa7dd3c8e84e836f7/docs/figure/regions.Rmd/RECCAP2_coastal_MARCAT_1deg-1.png" target="_blank">d5e90cc</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-02-26
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
