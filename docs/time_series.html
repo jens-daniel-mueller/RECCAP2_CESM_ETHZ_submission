@@ -542,16 +542,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreeedfb67c078d95d214315a9a821f40eecf3838784targetblankedfb67ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/edfb67c078d95d214315a9a821f40eecf3838784" target="_blank">edfb67c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree5611ec59d20cb44420d8411af896dae91f0fd701targetblank5611ec5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/5611ec59d20cb44420d8411af896dae91f0fd701" target="_blank">5611ec5</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreeedfb67c078d95d214315a9a821f40eecf3838784targetblankedfb67ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree5611ec59d20cb44420d8411af896dae91f0fd701targetblank5611ec5a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/edfb67c078d95d214315a9a821f40eecf3838784" target="_blank">edfb67c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/5611ec59d20cb44420d8411af896dae91f0fd701" target="_blank">5611ec5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -604,6 +604,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/5611ec59d20cb44420d8411af896dae91f0fd701/analysis/time_series.Rmd" target="_blank">5611ec5</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+<td>
+maps and time series of 2D data
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/6e5c0fd98559fc7ba33f7c99d36af3a1aa7698d5/docs/time_series.html" target="_blank">6e5c0fd</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -662,53 +696,32 @@ plot spatially integrated time series
 </div>
 </div>
 </div>
-<pre class="r"><code>path_GLODAP_preprocessing &lt;-
-  paste(path_root, &quot;/observations/preprocessing/&quot;, sep = &quot;&quot;)
-
-path_cmorized_annual &lt;-
-  &quot;/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/&quot;
-
-path_basin_mask &lt;-
-  &quot;/nfs/kryo/work/updata/reccapv2/&quot;</code></pre>
+<pre class="r"><code>path_cmorized_annual &lt;-
+  &quot;/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/&quot;</code></pre>
 <div id="region-masks" class="section level1" number="1">
 <h1 number="1"><span class="header-section-number">1</span> Region masks</h1>
-<div id="region_masks_all" class="section level2" number="1.1">
-<h2 number="1.1"><span class="header-section-number">1.1</span> region_masks_all</h2>
 <pre class="r"><code>region_masks_all &lt;-
   read_csv(&quot;data/regions/RECCAP2_region_masks_all_clean.cvs&quot;)</code></pre>
 </div>
+<div id="file-names" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> File names</h1>
+<pre class="r"><code>overview &lt;-
+  read_csv(&quot;data/overview/overview_files.csv&quot;)</code></pre>
 </div>
-<div id="read-glodapv2_2020-preprocessed-files" class="section level1" number="2">
-<h1 number="2"><span class="header-section-number">2</span> Read GLODAPv2_2020 preprocessed files</h1>
-<pre class="r"><code>GLODAP &lt;-
-  read_csv(paste(path_GLODAP_preprocessing,
-                 &quot;GLODAPv2.2020_preprocessed.csv&quot;,
-                 sep = &quot;&quot;))
-
-GLODAP &lt;- GLODAP %&gt;%
-  mutate(month = month(date))</code></pre>
-</div>
-<div id="subset-cmorized-data-according-to-glodap-observation" class="section level1" number="3">
-<h1 number="3"><span class="header-section-number">3</span> Subset cmorized data according to GLODAP observation</h1>
-<p>Here we subset cmorized (1x1) data from the model with variable forcing, according to the presence of GLODAP observations in a previously cleaned file.</p>
-<p>Besides, Model results are given in [mol m<sup>-3</sup>], whereas GLODAP data are in [µmol kg<sup>-1</sup>]. This refers to the variables:</p>
+<div id="time-series-plots" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> Time series plots</h1>
+<div id="it" class="section level2" number="3.1">
+<h2 number="3.1"><span class="header-section-number">3.1</span> iT</h2>
+<p>Comments:</p>
 <ul>
-<li>DIC<br />
-</li>
-<li>ALK<br />
-</li>
-<li>O2<br />
-</li>
-<li>NO3<br />
-</li>
-<li>PO4<br />
-</li>
-<li>SiO3</li>
-<li>AOU (calculated)</li>
+<li>fgco2_reg
+<ul>
+<li>regions not accessible</li>
+<li>values seem identical to fgco2_glob</li>
+</ul></li>
 </ul>
-<p>For comparison, model results were converted from [mol m<sup>-3</sup>] to [µmol kg<sup>-1</sup>]</p>
 <pre class="r"><code># set name of model to be subsetted
-model_IDs &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
+experiment_IDs &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
 
 # for loop across variables
 variables &lt;-
@@ -717,16 +730,16 @@ variables &lt;-
     # &quot;fgco2_reg&quot;
   )
 
-for (i_model_ID in model_IDs) {
+for (i_experiment_ID in experiment_IDs) {
   for (i_variable in variables) {
     
-    # i_model_ID &lt;- model_IDs[1]
-    # i_variable &lt;- variables[2]
+    # i_experiment_ID &lt;- experiment_IDs[1]
+    # i_variable &lt;- variables[1]
     
     # read list of all files
     file &lt;- paste(i_variable,
                   &quot;_CESM-ETHZ_&quot;,
-                  i_model_ID,
+                  i_experiment_ID,
                   &quot;_1_gr_1980-2018.nc&quot;,
                   sep = &quot;&quot;)
     print(file)
@@ -748,28 +761,282 @@ for (i_model_ID in model_IDs) {
     variable_data_tibble %&gt;%
       ggplot(aes(time_mon,
                  !!sym(i_variable))) +
-      geom_path()
+      geom_path() +
+      labs(title = paste(&quot;experiment_ID:&quot;, i_experiment_ID))
     )
     
   }
 }</code></pre>
 <pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_A_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/time_series.Rmd/regionally_integrated_2D_variables-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-1">
+Past versions of regionally_integrated_2D_variables-1.png
+</button>
+</p>
+<div id="fig-regionally_integrated_2D_variables-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/6e5c0fd98559fc7ba33f7c99d36af3a1aa7698d5/docs/figure/time_series.Rmd/regionally_integrated_2D_variables-1.png" target="_blank">6e5c0fd</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_B_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/time_series.Rmd/regionally_integrated_2D_variables-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-2">
+Past versions of regionally_integrated_2D_variables-2.png
+</button>
+</p>
+<div id="fig-regionally_integrated_2D_variables-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/6e5c0fd98559fc7ba33f7c99d36af3a1aa7698d5/docs/figure/time_series.Rmd/regionally_integrated_2D_variables-2.png" target="_blank">6e5c0fd</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_C_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/time_series.Rmd/regionally_integrated_2D_variables-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-3">
+Past versions of regionally_integrated_2D_variables-3.png
+</button>
+</p>
+<div id="fig-regionally_integrated_2D_variables-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/6e5c0fd98559fc7ba33f7c99d36af3a1aa7698d5/docs/figure/time_series.Rmd/regionally_integrated_2D_variables-3.png" target="_blank">6e5c0fd</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_D_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/time_series.Rmd/regionally_integrated_2D_variables-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-4">
+Past versions of regionally_integrated_2D_variables-4.png
+</button>
+</p>
+<div id="fig-regionally_integrated_2D_variables-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/6e5c0fd98559fc7ba33f7c99d36af3a1aa7698d5/docs/figure/time_series.Rmd/regionally_integrated_2D_variables-4.png" target="_blank">6e5c0fd</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="d-variables-xyt" class="section level2" number="3.2">
+<h2 number="3.2"><span class="header-section-number">3.2</span> 2D variables (XYT)</h2>
+<p>Comments:</p>
+<ul>
+<li></li>
+</ul>
+<pre class="r"><code># for loop across variables
+variables &lt;-
+  overview %&gt;% 
+  filter(shape == &quot;XYT&quot;) %&gt;% 
+  distinct(variable_id) %&gt;% 
+  pull()
+
+variables &lt;- variables[1]
+
+for (i_experiment_ID in experiment_IDs) {
+  for (i_variable in variables) {
+    
+    # i_experiment_ID &lt;- experiment_IDs[1]
+    # i_variable &lt;- variables[1]
+    
+    # read list of all files
+    file &lt;- paste(i_variable,
+                  &quot;_CESM-ETHZ_&quot;,
+                  i_experiment_ID,
+                  &quot;_1_gr_1980-2018.nc&quot;,
+                  sep = &quot;&quot;)
+    print(file)
+    
+    # read in data
+    variable_data &lt;-
+      tidync(paste(path_cmorized_annual,
+                   file,
+                   sep = &quot;&quot;))
+    
+    # convert to tibble
+    variable_data_tibble &lt;- variable_data %&gt;%
+      hyper_tibble()
+    
+        # remove open link to nc file
+    rm(variable_data)
+    
+    variable_data_tibble_climatology &lt;-
+      variable_data_tibble %&gt;% 
+      group_by(lat, lon) %&gt;% 
+      summarise(!!paste(sym(i_variable),&quot;mean&quot;,sep = &quot;_&quot;) := mean(!!sym(i_variable), na.rm = TRUE),
+                !!paste(sym(i_variable),&quot;min&quot;,sep = &quot;_&quot;) := min(!!sym(i_variable), na.rm = TRUE),
+                !!paste(sym(i_variable),&quot;max&quot;,sep = &quot;_&quot;) := max(!!sym(i_variable), na.rm = TRUE)) %&gt;%
+      ungroup() 
+    
+    variable_data_tibble_climatology &lt;- variable_data_tibble_climatology %&gt;% 
+      pivot_longer(starts_with(i_variable),
+                   values_to = &quot;value&quot;,
+                   names_to = &quot;parameter&quot;)
+    
+    print(
+    variable_data_tibble_climatology %&gt;% 
+      ggplot(aes(lon, lat, fill=value)) +
+      geom_raster() +
+      scale_fill_viridis_c() +
+      coord_quickmap(expand = 0) +
+      facet_grid(.~parameter) +
+      theme(axis.title = element_blank()) +
+      labs(title = paste(&quot;experiment_ID:&quot;, i_experiment_ID))
+    )
+    
+    variable_data_tibble_time_series &lt;-
+      variable_data_tibble %&gt;% 
+      group_by(time_mon) %&gt;% 
+      summarise(&quot;mean&quot; := mean(!!sym(i_variable), na.rm = TRUE),
+                &quot;min&quot;  := min(!!sym(i_variable), na.rm = TRUE),
+                &quot;max&quot;  := max(!!sym(i_variable), na.rm = TRUE)) %&gt;%
+      ungroup() 
+ 
+    print(
+      variable_data_tibble_time_series %&gt;%
+        ggplot() +
+        geom_ribbon(aes(
+          x = time_mon,
+          ymin = min,
+          ymax = max,
+          fill = &quot;min/max&quot;
+        ), alpha = 0.3) +
+        geom_path(aes(
+          x = time_mon,
+          y = mean,
+          col  = &quot;mean&quot;
+        )) +
+        scale_fill_viridis_d() +
+        scale_color_viridis_d() +
+        labs(title = paste(&quot;experiment_ID:&quot;, i_experiment_ID),
+             y = i_variable
+        ) +
+        theme(legend.title = element_blank())
+    )
+    
+       
+  }
+}</code></pre>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_A_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/time_series.Rmd/2D_variables-1.png" width="672" style="display: block; margin: auto;" /><img src="figure/time_series.Rmd/2D_variables-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_B_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/time_series.Rmd/2D_variables-3.png" width="672" style="display: block; margin: auto;" /><img src="figure/time_series.Rmd/2D_variables-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_C_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/time_series.Rmd/2D_variables-5.png" width="672" style="display: block; margin: auto;" /><img src="figure/time_series.Rmd/2D_variables-6.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_D_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/time_series.Rmd/2D_variables-7.png" width="672" style="display: block; margin: auto;" /><img src="figure/time_series.Rmd/2D_variables-8.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code># set name of model to be subsetted
-model_ID &lt;- &quot;A&quot;
+experiment_ID &lt;- &quot;A&quot;
 
 # for loop across variables
 variables &lt;-
-  c(
-    &quot;fgco2_glob&quot;,
-    &quot;fgco2_reg&quot;,
-    &quot;fgco2&quot;,
+  c(&quot;fgco2&quot;,
     &quot;spco2&quot;,
     &quot;fice&quot;,
     &quot;intpp&quot;,
@@ -812,7 +1079,7 @@ for (i_variable in variables) {
   # read list of all files
   file &lt;- paste(i_variable,
                 &quot;_CESM-ETHZ_&quot;,
-                model_ID,
+                experiment_ID,
                 &quot;_1_gr_1980-2018.nc&quot;,
                 sep = &quot;&quot;)
   print(file)
@@ -995,7 +1262,7 @@ stats_summary %&gt;%
     paste(
       path_preprocessing,
       &quot;regular_subset_distribution_runA/&quot;,
-      model_ID,
+      experiment_ID,
       &quot;_summary_stats.csv&quot;,
       sep = &quot;&quot;
     )
@@ -1028,40 +1295,39 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] tidync_0.2.4      reticulate_1.18   oce_1.2-0         marelac_2.1.10   
- [5] shape_1.4.5       gsw_1.0-5         testthat_2.3.2    rqdatatable_1.2.9
- [9] rquery_1.4.6      wrapr_2.0.4       lubridate_1.7.9   stars_0.4-3      
-[13] sf_0.9-6          abind_1.4-5       metR_0.9.0        scico_1.2.0      
-[17] patchwork_1.1.1   collapse_1.5.0    forcats_0.5.0     stringr_1.4.0    
-[21] dplyr_1.0.2       purrr_0.3.4       readr_1.4.0       tidyr_1.1.2      
-[25] tibble_3.0.4      ggplot2_3.3.2     tidyverse_1.3.0   workflowr_1.6.2  
+ [1] tidync_0.2.4    stars_0.4-3     sf_0.9-6        abind_1.4-5    
+ [5] metR_0.9.0      scico_1.2.0     patchwork_1.1.1 collapse_1.5.0 
+ [9] forcats_0.5.0   stringr_1.4.0   dplyr_1.0.2     purrr_0.3.4    
+[13] readr_1.4.0     tidyr_1.1.2     tibble_3.0.4    ggplot2_3.3.2  
+[17] tidyverse_1.3.0 workflowr_1.6.2
 
 loaded via a namespace (and not attached):
- [1] fs_1.5.0                 httr_1.4.2               rprojroot_2.0.2         
- [4] tools_4.0.3              backports_1.1.10         R6_2.5.0                
- [7] KernSmooth_2.23-17       DBI_1.1.0                colorspace_1.4-1        
-[10] withr_2.3.0              tidyselect_1.1.0         compiler_4.0.3          
-[13] git2r_0.27.1             cli_2.1.0                rvest_0.3.6             
-[16] RNetCDF_2.4-2            xml2_1.3.2               labeling_0.4.2          
-[19] scales_1.1.1             checkmate_2.0.0          classInt_0.4-3          
-[22] digest_0.6.27            rmarkdown_2.5            pkgconfig_2.0.3         
-[25] htmltools_0.5.0          dbplyr_1.4.4             rlang_0.4.9             
-[28] readxl_1.3.1             rstudioapi_0.13          farver_2.0.3            
-[31] generics_0.0.2           jsonlite_1.7.1           magrittr_1.5            
-[34] ncmeta_0.3.0             Matrix_1.2-18            Rcpp_1.0.5              
-[37] munsell_0.5.0            fansi_0.4.1              lifecycle_0.2.0         
-[40] stringi_1.5.3            whisker_0.4              yaml_2.2.1              
-[43] grid_4.0.3               blob_1.2.1               parallel_4.0.3          
-[46] promises_1.1.1           crayon_1.3.4             lattice_0.20-41         
-[49] haven_2.3.1              seacarb_3.2.14           hms_0.5.3               
+ [1] fs_1.5.0                 lubridate_1.7.9          httr_1.4.2              
+ [4] rprojroot_2.0.2          tools_4.0.3              backports_1.1.10        
+ [7] R6_2.5.0                 KernSmooth_2.23-17       DBI_1.1.0               
+[10] colorspace_1.4-1         withr_2.3.0              tidyselect_1.1.0        
+[13] compiler_4.0.3           git2r_0.27.1             cli_2.1.0               
+[16] rvest_0.3.6              RNetCDF_2.4-2            xml2_1.3.2              
+[19] labeling_0.4.2           scales_1.1.1             checkmate_2.0.0         
+[22] classInt_0.4-3           digest_0.6.27            rmarkdown_2.5           
+[25] pkgconfig_2.0.3          htmltools_0.5.0          dbplyr_1.4.4            
+[28] rlang_0.4.9              readxl_1.3.1             rstudioapi_0.13         
+[31] generics_0.0.2           farver_2.0.3             jsonlite_1.7.1          
+[34] magrittr_1.5             ncmeta_0.3.0             Matrix_1.2-18           
+[37] Rcpp_1.0.5               munsell_0.5.0            fansi_0.4.1             
+[40] lifecycle_0.2.0          stringi_1.5.3            whisker_0.4             
+[43] yaml_2.2.1               grid_4.0.3               blob_1.2.1              
+[46] parallel_4.0.3           promises_1.1.1           crayon_1.3.4            
+[49] lattice_0.20-41          haven_2.3.1              hms_0.5.3               
 [52] knitr_1.30               pillar_1.4.7             reprex_0.3.0            
 [55] glue_1.4.2               evaluate_0.14            RcppArmadillo_0.10.1.2.0
 [58] data.table_1.13.2        modelr_0.1.8             vctrs_0.3.5             
 [61] httpuv_1.5.4             cellranger_1.1.0         gtable_0.3.0            
 [64] assertthat_0.2.1         xfun_0.18                lwgeom_0.2-5            
 [67] broom_0.7.2              RcppEigen_0.3.3.7.0      e1071_1.7-4             
-[70] later_1.1.0.1            ncdf4_1.17               class_7.3-17            
-[73] units_0.6-7              ellipsis_0.3.1          </code></pre>
+[70] later_1.1.0.1            class_7.3-17             ncdf4_1.17              
+[73] viridisLite_0.3.0        units_0.6-7              ellipsis_0.3.1          </code></pre>
+</div>
 </div>
 </div>
 
