@@ -109,9 +109,10 @@ for (i_experiment_ID in experiment_IDs) {
         arrange(depth) %>%
         ggplot() +
         geom_ribbon(aes(
-          xmin = min, xmax = max, y = depth
+          xmin = min, xmax = max, y = depth,
+          fill = "min/max"
         ), alpha = 0.3) +
-        geom_path(aes(mean, depth)) +
+        geom_path(aes(mean, depth, col="mean")) +
         scale_y_reverse()  +
         scale_fill_viridis_d() +
         scale_color_viridis_d() +
