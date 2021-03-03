@@ -202,7 +202,7 @@ for (i_variable in variables) {
                                 sep = ""),
                    suppress_dimvals = TRUE)
   
-  ncvar_get(variable_data)
+  print(ncvar_get(variable_data))
 }
 
 
