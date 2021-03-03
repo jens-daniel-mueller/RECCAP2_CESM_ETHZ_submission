@@ -18,7 +18,7 @@ editor_options:
 # https://jdblischak.github.io/workflowr/articles/wflow-07-common-code.html
 ```
 
-```{r define_paths}
+```{r set_paths, include=FALSE}
 
 path_cmorized_annual <-
   "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/"
@@ -30,21 +30,19 @@ library(stars)
 library(tidync)
 ```
 
-# Regions mask
-
-```{r region_masks_all}
-
-region_masks_all <-
-  read_csv("data/regions/RECCAP2_region_masks_all_clean.cvs")
-
-```
 
 # File names
 
-```{r read_files_overview}
+```{r define}
 
 overview <-
   read_csv("data/overview/overview_files.csv")
+
+variables <-
+  overview %>%
+  filter(shape == "XYZT") %>%
+  distinct(variable_id) %>%
+  pull()
 
 # set name of model to be subsetted
 experiment_IDs <- c("A", "B", "C", "D")
@@ -53,20 +51,19 @@ experiment_IDs <- c("A", "B", "C", "D")
 
 # Plots
 
-Comments:
+Below, please find plots of the variables in the following order:
 
-- 
+`r variables`
+
+, which are shown for model runs:
+
+`r experiment_IDs`
+
 
 ```{r 3D_variables}
 
-variables <-
-  overview %>%
-  filter(shape == "XYZT") %>%
-  distinct(variable_id) %>%
-  pull()
-
-# variables <- variables[1]
-# experiment_IDs <- experiment_IDs[1]
+variables <- variables[1]
+experiment_IDs <- experiment_IDs[1]
 
 for (i_experiment_ID in experiment_IDs) {
   for (i_variable in variables) {
