@@ -127,8 +127,7 @@ for (i_experiment_ID in experiment_IDs) {
         scale_y_reverse()  +
         scale_fill_viridis_c() +
         labs(
-          title = paste("experiment_ID:", i_experiment_ID),
-          y = i_variable
+          title = paste("experiment_ID:", i_experiment_ID)
         )
     )
     
