@@ -7,8 +7,14 @@ navbar:
     href: overview.html
   - text: Regions
     href: regions.html
-  - text: Time series
-    href: time_series.html
+  - text: Diagnostics
+    menu:
+    - text: T
+      href: diagnostics_variables_T.html
+    - text: XYT
+      href: diagnostics_variables_XYT.html
+    - text: XYZT
+      href: diagnostics_variables_XYZT.html
   right:
   - icon: fa-github
     text: Source code

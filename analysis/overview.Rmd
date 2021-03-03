@@ -29,69 +29,80 @@ theme_set(theme_bw())
 
 This analysis is based on Table 3 of the RECCAP2-ocean protocol for model output, and statistics of the ETHZ CESM model output.
 
-The file list of the ETHZ CESM model output was created by running:
+```{r Table_3_from_protocol}
 
-`ls -l > /UP_home/jenmueller/Projects/RECCAP2_CESM_ETHZ_submission/data/overview/CESM_files.txt`
-
-while in folder: 
-
-`/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split`
-
-
-```{r load_overview_tables}
-
-# prepare tab 3
-tab3 <- read_csv(
+# read Table 3 from model protocol
+table_3 <- read_csv(
   here::here(
     "data/overview",
     "RECCAP2-ocean_data_products_overview - Model_protocol_table3.csv"
   )
 )
 
-tab3_temp <- tab3 %>% 
+# replace placeholder variable name with actual CESM variable name
+table_3_temp <- table_3 %>% 
   filter(variable_id == "epc100type / epc1000type") %>% 
   select(-variable_id)
 
-tab3_temp <- expand_grid(
-  tab3_temp,
+table_3_temp <- expand_grid(
+  table_3_temp,
   variable_id = c("epc100hard","epc1000hard","epc100soft","epc1000soft")
 )
 
-tab3 <- tab3 %>% 
+table_3 <- table_3 %>% 
   filter(variable_id != "epc100type / epc1000type")
 
-tab3 <- bind_rows(tab3, tab3_temp)
-rm(tab3_temp)
+table_3 <- bind_rows(table_3, table_3_temp)
+rm(table_3_temp)
 
-# prepare cesm file list
-CESM_files <- read_table2("data/overview/CESM_files.txt",
-                          col_names = FALSE,
-                          skip = 1)
+```
 
 
+The list of files and sizes of the ETHZ CESM model output refers to the content in this folder:
+
+```{r CESM_output_files_list}
+
+# set path to output
+path_CESM <-
+  "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split"
+path_CESM
+
+# create list of CESM output files and sizes
+
+CESM_files_names <- list.files(path = path_CESM)
+CESM_files_sizes <-
+  file.size(paste(path_CESM, CESM_files_names, sep = "/"))
+
+CESM_files <- bind_cols(file_name = CESM_files_names,
+                        file_size_MB = CESM_files_sizes * 1e-6)
+
+rm(path_CESM, CESM_files_names, CESM_files_sizes)
+
+# extract variable_id and experiment_id from file name
 CESM_files <- CESM_files %>%
-  select(X5, X9) %>%
-  rename(file_size = X5,
-         file_name = X9) %>%
   mutate(
     variable_id = str_split(file_name,
                             pattern = "_CESM",
                             simplify = TRUE)[, 1],
-    experiment_id = str_sub(string = file_name,-19,-19)
+    experiment_id = str_sub(string = file_name, -19, -19)
   ) %>%
-  mutate(
-    experiment_id = if_else(
-      experiment_id %in% c("A", "B", "C", "D"),
-      experiment_id,
-      "ancillary"
-    ),
-    variable_id = if_else(variable_id == "atmpco2", "pco2atm", variable_id),
-    file_size_MB = file_size*1e-6
-  ) %>%
-  select(-c(file_name, file_size))
+  mutate(experiment_id = if_else(
+    experiment_id %in% c("A", "B", "C", "D"),
+    experiment_id,
+    "ancillary"
+  )) %>%
+  select(-c(file_name))
+
+# correct errornous file name in CESM output
+CESM_files <- CESM_files %>%
+  mutate(variable_id = if_else(variable_id == "atmpco2", "pco2atm", variable_id))
+
+```
+
+```{r create_overview_table}
 
 # join file list and tab 3
-overview <- full_join(tab3, CESM_files) %>%
+overview <- full_join(table_3, CESM_files) %>%
   arrange(variable_id)
 
 overview <- overview %>%
@@ -99,7 +110,7 @@ overview <- overview %>%
          variable_id != "siconc") %>% 
   mutate(file_size_MB = round(file_size_MB,1))
 
-rm(CESM_files, tab3)
+rm(CESM_files, table_3)
 
 overview %>% 
   write_csv("data/overview/overview_files.csv")
