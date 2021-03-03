@@ -404,6 +404,9 @@ div.tocify {
     <li>
       <a href="diagnostics_variables_XYZT.html">XYZT</a>
     </li>
+    <li>
+      <a href="diagnostics_variables_ancillary.html">ancillary</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -441,7 +444,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Overview integrated time series</h1>
 <h4 class="author">Jens Daniel Müller</h4>
-<h4 class="date">02 March, 2021</h4>
+<h4 class="date">03 March, 2021</h4>
 
 </div>
 
@@ -466,7 +469,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-03-02
+<strong>Last updated:</strong> 2021-03-03
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -557,16 +560,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree73037f195a7f764e6d1db3dfb80bc4b921a35df1targetblank73037f1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/73037f195a7f764e6d1db3dfb80bc4b921a35df1" target="_blank">73037f1</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree69c6cb015fea58746134dc14243eee570e1cd425targetblank69c6cb0a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/69c6cb015fea58746134dc14243eee570e1cd425" target="_blank">69c6cb0</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree73037f195a7f764e6d1db3dfb80bc4b921a35df1targetblank73037f1a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree69c6cb015fea58746134dc14243eee570e1cd425targetblank69c6cb0a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/73037f195a7f764e6d1db3dfb80bc4b921a35df1" target="_blank">73037f1</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/69c6cb015fea58746134dc14243eee570e1cd425" target="_blank">69c6cb0</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -583,7 +586,6 @@ Untracked files:
 
 Unstaged changes:
     Modified:   analysis/_site.yml
-    Deleted:    analysis/time_series.Rmd
 
 </code></pre>
 <p>
@@ -622,6 +624,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/69c6cb015fea58746134dc14243eee570e1cd425/analysis/diagnostics_variables_T.Rmd" target="_blank">69c6cb0</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-03
+</td>
+<td>
+rebuild with ancillary variables
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/1bb2b08330aaedea6bab9a937ad3e37a41f9ad7d/docs/diagnostics_variables_T.html" target="_blank">1bb2b08</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -663,71 +699,64 @@ split diagnostics scripts per variable
 </div>
 </div>
 </div>
-<pre class="r"><code>path_cmorized_annual &lt;-
-  &quot;/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/&quot;</code></pre>
-<div id="regions-mask" class="section level1" number="1">
-<h1 number="1"><span class="header-section-number">1</span> Regions mask</h1>
-<pre class="r"><code>region_masks_all &lt;-
-  read_csv(&quot;data/regions/RECCAP2_region_masks_all_clean.cvs&quot;)</code></pre>
-</div>
-<div id="file-names" class="section level1" number="2">
-<h1 number="2"><span class="header-section-number">2</span> File names</h1>
+<div id="file-names" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> File names</h1>
 <pre class="r"><code>overview &lt;-
   read_csv(&quot;data/overview/overview_files.csv&quot;)
+
+variables &lt;-
+  overview %&gt;%
+  filter(shape %in% c(&quot;T&quot;, &quot;iT&quot;)) %&gt;%
+  distinct(variable_id) %&gt;%
+  pull()
 
 # set name of model to be subsetted
 experiment_IDs &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)</code></pre>
 </div>
-<div id="plots" class="section level1" number="3">
-<h1 number="3"><span class="header-section-number">3</span> Plots</h1>
-<p>Comments:</p>
+<div id="plots" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Plots</h1>
+<p>Below, please find plots of the variables in the following order:</p>
 <ul>
-<li>fgco2_reg
-<ul>
-<li>regions not accessible</li>
-<li>values seem identical to fgco2_glob</li>
-</ul></li>
+<li>fgco2_glob, fgco2_reg</li>
 </ul>
-<pre class="r"><code># for loop across variables
-variables &lt;-
-  c(&quot;fgco2_glob&quot;
-    # &quot;fgco2_reg&quot;
-    )
+<p>Plots for all variables are shown one after the other for the model runs:</p>
+<ul>
+<li>A, B, C, D</li>
+</ul>
+<pre class="r"><code>for (i_experiment_ID in experiment_IDs) {
+  for (i_variable in variables) {
+    # i_experiment_ID &lt;- experiment_IDs[1]
+    # i_variable &lt;- variables[1]
     
-    for (i_experiment_ID in experiment_IDs) {
-      for (i_variable in variables) {
-        # i_experiment_ID &lt;- experiment_IDs[1]
-        # i_variable &lt;- variables[1]
-        
-        # read list of all files
-        file &lt;- paste(i_variable,
-                      &quot;_CESM-ETHZ_&quot;,
-                      i_experiment_ID,
-                      &quot;_1_gr_1980-2018.nc&quot;,
-                      sep = &quot;&quot;)
-        print(file)
-        
-        # read in data
-        variable_data &lt;-
-          tidync(paste(path_cmorized_annual,
-                       file,
-                       sep = &quot;&quot;))
-        
-        # convert to tibble
-        variable_data_tibble &lt;- variable_data %&gt;%
-          hyper_tibble()
-        
-        # remove open link to nc file
-        rm(variable_data)
-        
-        print(variable_data_tibble %&gt;%
-                ggplot(aes(time_mon,
-                           !!sym(i_variable))) +
-                geom_path() +
-                labs(title = paste(&quot;experiment_ID:&quot;, i_experiment_ID)))
-        
-      }
-    }</code></pre>
+    # read list of all files
+    file &lt;- paste(i_variable,
+                  &quot;_CESM-ETHZ_&quot;,
+                  i_experiment_ID,
+                  &quot;_1_gr_1980-2018.nc&quot;,
+                  sep = &quot;&quot;)
+    print(file)
+    
+    # read in data
+    variable_data &lt;-
+      tidync(paste(path_cmorized_annual,
+                   file,
+                   sep = &quot;&quot;))
+    
+    # convert to tibble
+    variable_data_tibble &lt;- variable_data %&gt;%
+      hyper_tibble()
+    
+    # remove open link to nc file
+    rm(variable_data)
+    
+    print(variable_data_tibble %&gt;%
+            ggplot(aes(time_mon,
+                       !!sym(i_variable))) +
+            geom_path() +
+            labs(title = paste(&quot;experiment_ID:&quot;, i_experiment_ID)))
+    
+  }
+}</code></pre>
 <pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_A_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -767,7 +796,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_B_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_A_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-2">
@@ -806,7 +835,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_C_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_B_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-3">
@@ -845,7 +874,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_D_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_B_1_gr_1980-2018.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-4.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-4">
@@ -884,6 +913,14 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
+<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_C_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_C_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-6.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_D_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-7.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_D_1_gr_1980-2018.nc&quot;</code></pre>
+<p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-8.png" width="672" style="display: block; margin: auto;" /></p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
