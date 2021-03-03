@@ -1,7 +1,7 @@
 name: RECCAP2_CESM_ETHZ_submission
 output_dir: ../docs
 navbar:
-  title: RECCAP2_CESM_ETHZ_submission
+  title: CESM-ETHZ RECCAP-ocean
   left:
   - text: Overview
     href: overview.html
