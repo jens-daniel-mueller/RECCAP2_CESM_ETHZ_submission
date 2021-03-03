@@ -18,7 +18,8 @@ editor_options:
 # https://jdblischak.github.io/workflowr/articles/wflow-07-common-code.html
 ```
 
-```{r define_paths}
+
+```{r set_paths, include=FALSE}
 
 path_cmorized_annual <-
   "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/"
@@ -30,21 +31,18 @@ library(stars)
 library(tidync)
 ```
 
-# Regions mask
-
-```{r region_masks_all}
-
-region_masks_all <-
-  read_csv("data/regions/RECCAP2_region_masks_all_clean.cvs")
-
-```
-
 # File names
 
-```{r read_files_overview}
+```{r define}
 
 overview <-
   read_csv("data/overview/overview_files.csv")
+
+variables <-
+  overview %>%
+  filter(shape %in% c("T", "iT")) %>%
+  distinct(variable_id) %>%
+  pull()
 
 # set name of model to be subsetted
 experiment_IDs <- c("A", "B", "C", "D")
@@ -53,55 +51,53 @@ experiment_IDs <- c("A", "B", "C", "D")
 
 # Plots
 
-Comments:
+Below, please find plots of the variables in the following order:
 
-- fgco2_reg
-  - regions not accessible
-  - values seem identical to fgco2_glob
+- `r variables`
+
+Plots for all variables are shown one after the other for the model runs:
+
+- `r experiment_IDs`
+
 
 ```{r regionally_integrated_2D_variables, fig.asp=0.5}
 
 
-# for loop across variables
-variables <-
-  c("fgco2_glob"
-    # "fgco2_reg"
-    )
+
+for (i_experiment_ID in experiment_IDs) {
+  for (i_variable in variables) {
+    # i_experiment_ID <- experiment_IDs[1]
+    # i_variable <- variables[1]
     
-    for (i_experiment_ID in experiment_IDs) {
-      for (i_variable in variables) {
-        # i_experiment_ID <- experiment_IDs[1]
-        # i_variable <- variables[1]
-        
-        # read list of all files
-        file <- paste(i_variable,
-                      "_CESM-ETHZ_",
-                      i_experiment_ID,
-                      "_1_gr_1980-2018.nc",
-                      sep = "")
-        print(file)
-        
-        # read in data
-        variable_data <-
-          tidync(paste(path_cmorized_annual,
-                       file,
-                       sep = ""))
-        
-        # convert to tibble
-        variable_data_tibble <- variable_data %>%
-          hyper_tibble()
-        
-        # remove open link to nc file
-        rm(variable_data)
-        
-        print(variable_data_tibble %>%
-                ggplot(aes(time_mon,
-                           !!sym(i_variable))) +
-                geom_path() +
-                labs(title = paste("experiment_ID:", i_experiment_ID)))
-        
-      }
-    }
+    # read list of all files
+    file <- paste(i_variable,
+                  "_CESM-ETHZ_",
+                  i_experiment_ID,
+                  "_1_gr_1980-2018.nc",
+                  sep = "")
+    print(file)
+    
+    # read in data
+    variable_data <-
+      tidync(paste(path_cmorized_annual,
+                   file,
+                   sep = ""))
+    
+    # convert to tibble
+    variable_data_tibble <- variable_data %>%
+      hyper_tibble()
+    
+    # remove open link to nc file
+    rm(variable_data)
+    
+    print(variable_data_tibble %>%
+            ggplot(aes(time_mon,
+                       !!sym(i_variable))) +
+            geom_path() +
+            labs(title = paste("experiment_ID:", i_experiment_ID)))
+    
+  }
+}
 
 ```
 
