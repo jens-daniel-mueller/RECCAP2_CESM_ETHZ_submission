@@ -441,7 +441,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Overview</h1>
 <h4 class="author">Jens Daniel Müller</h4>
-<h4 class="date">02 March, 2021</h4>
+<h4 class="date">03 March, 2021</h4>
 
 </div>
 
@@ -466,7 +466,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-03-02
+<strong>Last updated:</strong> 2021-03-03
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -557,16 +557,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree73037f195a7f764e6d1db3dfb80bc4b921a35df1targetblank73037f1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/73037f195a7f764e6d1db3dfb80bc4b921a35df1" target="_blank">73037f1</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreeb69cc55d8e89207424b3a74673731b54d77d6dc9targetblankb69cc55a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/b69cc55d8e89207424b3a74673731b54d77d6dc9" target="_blank">b69cc55</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree73037f195a7f764e6d1db3dfb80bc4b921a35df1targetblank73037f1a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreeb69cc55d8e89207424b3a74673731b54d77d6dc9targetblankb69cc55a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/73037f195a7f764e6d1db3dfb80bc4b921a35df1" target="_blank">73037f1</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/b69cc55d8e89207424b3a74673731b54d77d6dc9" target="_blank">b69cc55</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -580,10 +580,6 @@ Untracked files:
     Untracked:  code/Workflowr_project_managment.R
     Untracked:  data/overview/
     Untracked:  data/regions/
-
-Unstaged changes:
-    Modified:   analysis/_site.yml
-    Deleted:    analysis/time_series.Rmd
 
 </code></pre>
 <p>
@@ -622,6 +618,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/b69cc55d8e89207424b3a74673731b54d77d6dc9/analysis/overview.Rmd" target="_blank">b69cc55</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-03
+</td>
+<td>
+create file list with sizes in R
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/1bb2b08330aaedea6bab9a937ad3e37a41f9ad7d/docs/overview.html" target="_blank">1bb2b08</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-02
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1059,62 +1089,66 @@ library(gt)</code></pre>
 <div id="load-data" class="section level1" number="1">
 <h1 number="1"><span class="header-section-number">1</span> Load data</h1>
 <p>This analysis is based on Table 3 of the RECCAP2-ocean protocol for model output, and statistics of the ETHZ CESM model output.</p>
-<p>The file list of the ETHZ CESM model output was created by running:</p>
-<p><code>ls -l &gt; /UP_home/jenmueller/Projects/RECCAP2_CESM_ETHZ_submission/data/overview/CESM_files.txt</code></p>
-<p>while in folder:</p>
-<p><code>/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split</code></p>
-<pre class="r"><code># prepare tab 3
-tab3 &lt;- read_csv(
+<pre class="r"><code># read Table 3 from model protocol
+table_3 &lt;- read_csv(
   here::here(
     &quot;data/overview&quot;,
     &quot;RECCAP2-ocean_data_products_overview - Model_protocol_table3.csv&quot;
   )
 )
 
-tab3_temp &lt;- tab3 %&gt;% 
+# replace placeholder variable name with actual CESM variable name
+table_3_temp &lt;- table_3 %&gt;% 
   filter(variable_id == &quot;epc100type / epc1000type&quot;) %&gt;% 
   select(-variable_id)
 
-tab3_temp &lt;- expand_grid(
-  tab3_temp,
+table_3_temp &lt;- expand_grid(
+  table_3_temp,
   variable_id = c(&quot;epc100hard&quot;,&quot;epc1000hard&quot;,&quot;epc100soft&quot;,&quot;epc1000soft&quot;)
 )
 
-tab3 &lt;- tab3 %&gt;% 
+table_3 &lt;- table_3 %&gt;% 
   filter(variable_id != &quot;epc100type / epc1000type&quot;)
 
-tab3 &lt;- bind_rows(tab3, tab3_temp)
-rm(tab3_temp)
+table_3 &lt;- bind_rows(table_3, table_3_temp)
+rm(table_3_temp)</code></pre>
+<p>The list of files and sizes of the ETHZ CESM model output refers to the content in this folder:</p>
+<pre class="r"><code># set path to output
+path_CESM &lt;-
+  &quot;/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split&quot;
+path_CESM</code></pre>
+<pre><code>[1] &quot;/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split&quot;</code></pre>
+<pre class="r"><code># create list of CESM output files and sizes
 
-# prepare cesm file list
-CESM_files &lt;- read_table2(&quot;data/overview/CESM_files.txt&quot;,
-                          col_names = FALSE,
-                          skip = 1)
+CESM_files_names &lt;- list.files(path = path_CESM)
+CESM_files_sizes &lt;-
+  file.size(paste(path_CESM, CESM_files_names, sep = &quot;/&quot;))
 
+CESM_files &lt;- bind_cols(file_name = CESM_files_names,
+                        file_size_MB = CESM_files_sizes * 1e-6)
 
+rm(path_CESM, CESM_files_names, CESM_files_sizes)
+
+# extract variable_id and experiment_id from file name
 CESM_files &lt;- CESM_files %&gt;%
-  select(X5, X9) %&gt;%
-  rename(file_size = X5,
-         file_name = X9) %&gt;%
   mutate(
     variable_id = str_split(file_name,
                             pattern = &quot;_CESM&quot;,
                             simplify = TRUE)[, 1],
-    experiment_id = str_sub(string = file_name,-19,-19)
+    experiment_id = str_sub(string = file_name, -19, -19)
   ) %&gt;%
-  mutate(
-    experiment_id = if_else(
-      experiment_id %in% c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;),
-      experiment_id,
-      &quot;ancillary&quot;
-    ),
-    variable_id = if_else(variable_id == &quot;atmpco2&quot;, &quot;pco2atm&quot;, variable_id),
-    file_size_MB = file_size*1e-6
-  ) %&gt;%
-  select(-c(file_name, file_size))
+  mutate(experiment_id = if_else(
+    experiment_id %in% c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;),
+    experiment_id,
+    &quot;ancillary&quot;
+  )) %&gt;%
+  select(-c(file_name))
 
-# join file list and tab 3
-overview &lt;- full_join(tab3, CESM_files) %&gt;%
+# correct errornous file name in CESM output
+CESM_files &lt;- CESM_files %&gt;%
+  mutate(variable_id = if_else(variable_id == &quot;atmpco2&quot;, &quot;pco2atm&quot;, variable_id))</code></pre>
+<pre class="r"><code># join file list and tab 3
+overview &lt;- full_join(table_3, CESM_files) %&gt;%
   arrange(variable_id)
 
 overview &lt;- overview %&gt;%
@@ -1122,7 +1156,7 @@ overview &lt;- overview %&gt;%
          variable_id != &quot;siconc&quot;) %&gt;% 
   mutate(file_size_MB = round(file_size_MB,1))
 
-rm(CESM_files, tab3)
+rm(CESM_files, table_3)
 
 overview %&gt;% 
   write_csv(&quot;data/overview/overview_files.csv&quot;)</code></pre>
@@ -1145,7 +1179,7 @@ overview %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#cchisdgcjb .gt_table {
+#ykspcchisd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1170,7 +1204,7 @@ overview %&gt;%
   border-left-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_heading {
+#ykspcchisd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1182,7 +1216,7 @@ overview %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_title {
+#ykspcchisd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1192,7 +1226,7 @@ overview %&gt;%
   border-bottom-width: 0;
 }
 
-#cchisdgcjb .gt_subtitle {
+#ykspcchisd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1202,13 +1236,13 @@ overview %&gt;%
   border-top-width: 0;
 }
 
-#cchisdgcjb .gt_bottom_border {
+#ykspcchisd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_col_headings {
+#ykspcchisd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1223,7 +1257,7 @@ overview %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_col_heading {
+#ykspcchisd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1243,7 +1277,7 @@ overview %&gt;%
   overflow-x: hidden;
 }
 
-#cchisdgcjb .gt_column_spanner_outer {
+#ykspcchisd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1255,15 +1289,15 @@ overview %&gt;%
   padding-right: 4px;
 }
 
-#cchisdgcjb .gt_column_spanner_outer:first-child {
+#ykspcchisd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cchisdgcjb .gt_column_spanner_outer:last-child {
+#ykspcchisd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cchisdgcjb .gt_column_spanner {
+#ykspcchisd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1275,7 +1309,7 @@ overview %&gt;%
   width: 100%;
 }
 
-#cchisdgcjb .gt_group_heading {
+#ykspcchisd .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1297,7 +1331,7 @@ overview %&gt;%
   vertical-align: middle;
 }
 
-#cchisdgcjb .gt_empty_group_heading {
+#ykspcchisd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1312,15 +1346,15 @@ overview %&gt;%
   vertical-align: middle;
 }
 
-#cchisdgcjb .gt_from_md > :first-child {
+#ykspcchisd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cchisdgcjb .gt_from_md > :last-child {
+#ykspcchisd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cchisdgcjb .gt_row {
+#ykspcchisd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1339,7 +1373,7 @@ overview %&gt;%
   overflow-x: hidden;
 }
 
-#cchisdgcjb .gt_stub {
+#ykspcchisd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1351,7 +1385,7 @@ overview %&gt;%
   padding-left: 12px;
 }
 
-#cchisdgcjb .gt_summary_row {
+#ykspcchisd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1361,7 +1395,7 @@ overview %&gt;%
   padding-right: 5px;
 }
 
-#cchisdgcjb .gt_first_summary_row {
+#ykspcchisd .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1371,7 +1405,7 @@ overview %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_grand_summary_row {
+#ykspcchisd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1381,7 +1415,7 @@ overview %&gt;%
   padding-right: 5px;
 }
 
-#cchisdgcjb .gt_first_grand_summary_row {
+#ykspcchisd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1391,11 +1425,11 @@ overview %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_striped {
+#ykspcchisd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cchisdgcjb .gt_table_body {
+#ykspcchisd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1404,7 +1438,7 @@ overview %&gt;%
   border-bottom-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_footnotes {
+#ykspcchisd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1418,13 +1452,13 @@ overview %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_footnote {
+#ykspcchisd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#cchisdgcjb .gt_sourcenotes {
+#ykspcchisd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1438,46 +1472,46 @@ overview %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#cchisdgcjb .gt_sourcenote {
+#ykspcchisd .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#cchisdgcjb .gt_left {
+#ykspcchisd .gt_left {
   text-align: left;
 }
 
-#cchisdgcjb .gt_center {
+#ykspcchisd .gt_center {
   text-align: center;
 }
 
-#cchisdgcjb .gt_right {
+#ykspcchisd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cchisdgcjb .gt_font_normal {
+#ykspcchisd .gt_font_normal {
   font-weight: normal;
 }
 
-#cchisdgcjb .gt_font_bold {
+#ykspcchisd .gt_font_bold {
   font-weight: bold;
 }
 
-#cchisdgcjb .gt_font_italic {
+#ykspcchisd .gt_font_italic {
   font-style: italic;
 }
 
-#cchisdgcjb .gt_super {
+#ykspcchisd .gt_super {
   font-size: 65%;
 }
 
-#cchisdgcjb .gt_footnote_marks {
+#ykspcchisd .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="cchisdgcjb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="ykspcchisd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
