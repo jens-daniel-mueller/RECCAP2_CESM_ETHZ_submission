@@ -12,11 +12,13 @@ editor_options:
   chunk_output_type: console
 ---
 
+
 ```{r parent, child = "/nfs/kryo/work/jenmueller/emlr_cant/utilities/setup.Rmd"}
 # this chunk runs the code stored in setup.Rmd
 # if required, please refer to instructions given here:
 # https://jdblischak.github.io/workflowr/articles/wflow-07-common-code.html
 ```
+
 
 ```{r set_paths, include=FALSE}
 
@@ -39,101 +41,170 @@ overview <-
 
 variables <-
   overview %>%
-  filter(shape == "XYZT") %>%
+  filter(experiment_id == "ancillary") %>%
   distinct(variable_id) %>%
   pull()
 
-# set name of model to be subsetted
-experiment_IDs <- c("A", "B", "C", "D")
 
 ```
 
 # Plots
 
-Below, please find plots of the variables in the following order:
+Below, please find plots of the variables:
 
 - `r variables`
 
-Plots for all variables are shown one after the other for the model runs:
 
-- `r experiment_IDs`
+## T shape variables
+
+```{r T_variables}
+
+i_variable <- "Atm_CO2"
+i_variable
+
+# read list of all files
+file <- paste(i_variable,
+              "_CESM-ETHZ_gr_1980-2018.nc",
+              sep = "")
+print(file)
+
+# read in data
+variable_data <-
+  tidync(paste(path_cmorized_annual,
+               file,
+               sep = ""))
+
+# convert to tibble
+variable_data_tibble <- variable_data %>%
+  hyper_tibble()
+
+# remove open link to nc file
+rm(variable_data)
+
+variable_data_tibble %>%
+  ggplot(aes(time_ann, Atm_CO2)) +
+  geom_path() +
+  geom_point()
+
+```
 
 
-```{r 3D_variables, eval=FALSE}
+## XYZ shape variables
 
-# variables <- variables[1]
-# experiment_IDs <- experiment_IDs[1]
+```{r XYZ_variables}
 
-for (i_experiment_ID in experiment_IDs) {
-  for (i_variable in variables) {
-    # i_experiment_ID <- experiment_IDs[1]
-    # i_variable <- variables[1]
-    
-    # read list of all files
-    file <- paste(i_variable,
-                  "_CESM-ETHZ_",
-                  i_experiment_ID,
-                  "_1_gr_1980-2018.nc",
-                  sep = "")
-    print(file)
-    
-    # read in data
-    variable_data <-
-      tidync(paste(path_cmorized_annual,
-                   file,
-                   sep = ""))
-    
-    # convert to tibble
-    variable_data_tibble <- variable_data %>%
-      hyper_tibble()
-    
-    # remove open link to nc file
-    rm(variable_data)
-    
-    variable_data_tibble_climatology <-
-      variable_data_tibble %>%
-      group_by(depth) %>%
-      summarise(
-        "mean" := mean(!!sym(i_variable), na.rm = TRUE),
-        "min"  := min(!!sym(i_variable), na.rm = TRUE),
-        "max"  := max(!!sym(i_variable), na.rm = TRUE)
-      ) %>%
-      ungroup()
-    
-    print(
-      variable_data_tibble_climatology %>%
-        arrange(depth) %>%
-        ggplot() +
-        geom_ribbon(aes(
-          xmin = min, xmax = max, y = depth,
-          fill = "min/max"
-        ), alpha = 0.3) +
-        geom_path(aes(mean, depth, col="mean")) +
-        scale_y_reverse()  +
-        scale_fill_viridis_d() +
-        scale_color_viridis_d() +
-        labs(
-          title = paste("experiment_ID:", i_experiment_ID),
-          y = i_variable
-        ) +
-        theme(legend.title = element_blank())
-    )
-    
-    
-    print(
-      variable_data_tibble %>%
-        ggplot(aes(!!sym(i_variable), depth)) +
-        geom_bin2d(bins = 100) +
-        scale_y_reverse()  +
-        scale_fill_viridis_c() +
-        labs(
-          title = paste("experiment_ID:", i_experiment_ID),
-          y = i_variable
-        )
-    )
-    
-  }
+variables <- c("volume", "mask_vol")
+
+for (i_variable in variables) {
+  # i_variable <- variables[2]
+  
+  # read list of all files
+  file <- paste(i_variable,
+                "_CESM-ETHZ_gr.nc",
+                sep = "")
+  print(file)
+  
+  # read in data
+  variable_data <-
+    tidync(paste(path_cmorized_annual,
+                 file,
+                 sep = ""))
+  
+  # convert to tibble
+  variable_data_tibble <- variable_data %>%
+    hyper_tibble()
+  
+  # remove open link to nc file
+  rm(variable_data)
+  
+  print(
+    variable_data_tibble %>%
+      ggplot(aes(!!sym(i_variable), depth)) +
+      geom_bin2d(bins = 100) +
+      scale_y_reverse()  +
+      scale_fill_viridis_c()
+  )
+  
+  print(
+    variable_data_tibble %>%
+      ggplot(aes(!!sym(i_variable))) +
+      geom_histogram()
+  )
+  
 }
+
+```
+
+
+## XY shape variables
+
+```{r XY_variables}
+
+variables <- c("area", "mask_sfc")
+
+
+for (i_variable in variables) {
+  # i_variable <- variables[2]
+  
+  # read list of all files
+  file <- paste(i_variable,
+                "_CESM-ETHZ_gr.nc",
+                sep = "")
+  print(file)
+  
+  # read in data
+  variable_data <-
+    tidync(paste(path_cmorized_annual,
+                 file,
+                 sep = ""))
+  
+  # convert to tibble
+  variable_data_tibble <- variable_data %>%
+    hyper_tibble()
+  
+  # remove open link to nc file
+  rm(variable_data)
+  
+  print(
+    variable_data_tibble %>%
+      ggplot(aes(lon, lat, fill=!!sym(i_variable))) +
+      geom_raster() +
+      scale_fill_viridis_c() +
+      coord_quickmap(expand = 0)
+  )
+
+}
+
+```
+
+## Single values
+
+```{r single_value_variables}
+
+variables <- c("Area_tot_native", "Vol_tot_native")
+
+
+for (i_variable in variables) {
+  # i_variable <- variables[1]
+  
+  # read list of all files
+  file <- paste(i_variable,
+                "_CESM-ETHZ_gr.nc",
+                sep = "")
+  print(file)
+  
+  library(ncdf4)
+  
+  # read in data
+  variable_data <-
+    nc_open(file = paste(path_cmorized_annual,
+                                file,
+                                sep = ""),
+                   suppress_dimvals = TRUE)
+  
+  ncvar_get(variable_data)
+}
+
 
 ```
 
