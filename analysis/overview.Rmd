@@ -64,7 +64,7 @@ The list of files and sizes of the ETHZ CESM model output refers to the content 
 
 # set path to output
 path_CESM <-
-  "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split"
+  "/net/kryo/work/loher/CESM_output/RECCAP2/submit_March2021"
 path_CESM
 
 # create list of CESM output files and sizes
@@ -74,7 +74,7 @@ CESM_files_sizes <-
   file.size(paste(path_CESM, CESM_files_names, sep = "/"))
 
 CESM_files <- bind_cols(file_name = CESM_files_names,
-                        file_size_MB = round(CESM_files_sizes * 1e-6), 1)
+                        file_size_MB = round(CESM_files_sizes * 1e-6, 1))
 
 rm(path_CESM, CESM_files_names, CESM_files_sizes)
 
@@ -94,8 +94,8 @@ CESM_files <- CESM_files %>%
   select(-c(file_name))
 
 # correct errornous file name in CESM output
-CESM_files <- CESM_files %>%
-  mutate(variable_id = if_else(variable_id == "atmpco2", "pco2atm", variable_id))
+# CESM_files <- CESM_files %>%
+#   mutate(variable_id = if_else(variable_id == "atmpco2", "pco2atm", variable_id))
 
 ```
 
@@ -106,8 +106,8 @@ overview <- full_join(table_3, CESM_files) %>%
   arrange(variable_id)
 
 # remove missing/additional variables
-overview <- overview %>%
-  filter(!(variable_id %in% c("siconc", "fice")))
+# overview <- overview %>%
+#   filter(!(variable_id %in% c("siconc", "fice")))
 
 rm(CESM_files, table_3)
 
