@@ -21,13 +21,14 @@ editor_options:
 ```{r set_paths, include=FALSE}
 
 path_cmorized_annual <-
-  "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/"
+  "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_March2021/"
 
 ```
 
 ```{r load_libraries_specific, include=FALSE}
 library(stars)
 library(tidync)
+library(units)
 ```
 
 # File names
@@ -79,13 +80,17 @@ for (i_experiment_ID in experiment_IDs) {
     
     # read in data
     variable_data <-
-      tidync(paste(path_cmorized_annual,
+      read_ncdf(paste(path_cmorized_annual,
                    file,
                    sep = ""))
     
     # convert to tibble
     variable_data_tibble <- variable_data %>%
-      hyper_tibble()
+      as_tibble()
+    
+    # drop units for plotting
+    variable_data_tibble <- variable_data_tibble %>% 
+      drop_units()
     
     # remove open link to nc file
     rm(variable_data)
@@ -120,16 +125,16 @@ for (i_experiment_ID in experiment_IDs) {
     )
     
     
-    print(
-      variable_data_tibble %>%
-        ggplot(aes(!!sym(i_variable), depth)) +
-        geom_bin2d(bins = 100) +
-        scale_y_reverse()  +
-        scale_fill_viridis_c() +
-        labs(
-          title = paste("experiment_ID:", i_experiment_ID)
-        )
-    )
+    # print(
+    #   variable_data_tibble %>%
+    #     ggplot(aes(!!sym(i_variable), depth)) +
+    #     geom_bin2d(bins = 100) +
+    #     scale_y_reverse()  +
+    #     scale_fill_viridis_c() +
+    #     labs(
+    #       title = paste("experiment_ID:", i_experiment_ID)
+    #     )
+    # )
     
   }
 }
