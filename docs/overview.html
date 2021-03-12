@@ -560,16 +560,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree3bd634e79977bd3ec639c1023d8d09905d9d4fdctargetblank3bd634ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/3bd634e79977bd3ec639c1023d8d09905d9d4fdc" target="_blank">3bd634e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree415448d8694b0295c819d7687f02142d5c7a92e7targetblank415448da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/415448d8694b0295c819d7687f02142d5c7a92e7" target="_blank">415448d</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree3bd634e79977bd3ec639c1023d8d09905d9d4fdctargetblank3bd634ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree415448d8694b0295c819d7687f02142d5c7a92e7targetblank415448da" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/3bd634e79977bd3ec639c1023d8d09905d9d4fdc" target="_blank">3bd634e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/415448d8694b0295c819d7687f02142d5c7a92e7" target="_blank">415448d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -581,6 +581,7 @@ Ignored files:
 
 Unstaged changes:
     Modified:   code/Workflowr_project_managment.R
+    Modified:   data/overview/overview_files.csv
 
 </code></pre>
 <p>
@@ -619,6 +620,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/92e996ccb768726f7d781eadbeafd9fa765ce6a6/docs/overview.html" target="_blank">92e996c</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1888,14 +1906,10 @@ overview %&gt;%
   group_by(experiment_id) %&gt;% 
   summarise_at(&quot;file_size_MB&quot;, sum, na.rm = TRUE) %&gt;% 
   arrange(file_size_MB, experiment_id)</code></pre>
-<pre><code># A tibble: 5 x 2
+<pre><code># A tibble: 1 x 2
   experiment_id file_size_MB
   &lt;chr&gt;                &lt;dbl&gt;
-1 ancillary             31.8
-2 A                   9098. 
-3 B                   9098. 
-4 C                   9098. 
-5 D                   9098. </code></pre>
+1 ancillary           36422.</code></pre>
 <pre class="r"><code>overview &lt;- overview %&gt;% 
   filter(experiment_id != &quot;ancillary&quot;,
          !is.na(priority))</code></pre>
@@ -1906,63 +1920,28 @@ overview %&gt;%
 <pre class="r"><code>overview %&gt;% 
   group_by(dimension, priority) %&gt;% 
   summarise_at(&quot;file_size_MB&quot;, sum, na.rm = TRUE)</code></pre>
-<pre><code># A tibble: 5 x 3
-# Groups:   dimension [2]
-  dimension priority file_size_MB
-  &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;
-1 2D               1        7278 
-2 2D               2        6793.
-3 2D               3         485.
-4 3D               1       12130 
-5 3D               2        9704 </code></pre>
+<pre><code># A tibble: 0 x 3
+# Groups:   dimension [0]
+# … with 3 variables: dimension &lt;chr&gt;, priority &lt;dbl&gt;, file_size_MB &lt;dbl&gt;</code></pre>
 </div>
 <div id="dimension-x-experiment_id" class="section level2" number="3.3">
 <h2 number="3.3"><span class="header-section-number">3.3</span> dimension x experiment_ID</h2>
 <pre class="r"><code>overview %&gt;% 
   group_by(dimension, experiment_id) %&gt;% 
   summarise_at(&quot;file_size_MB&quot;, sum, na.rm = TRUE)</code></pre>
-<pre><code># A tibble: 8 x 3
-# Groups:   dimension [2]
-  dimension experiment_id file_size_MB
-  &lt;chr&gt;     &lt;chr&gt;                &lt;dbl&gt;
-1 2D        A                    3639 
-2 2D        B                    3639 
-3 2D        C                    3639 
-4 2D        D                    3639 
-5 3D        A                    5458.
-6 3D        B                    5458.
-7 3D        C                    5458.
-8 3D        D                    5458.</code></pre>
+<pre><code># A tibble: 0 x 3
+# Groups:   dimension [0]
+# … with 3 variables: dimension &lt;chr&gt;, experiment_id &lt;chr&gt;, file_size_MB &lt;dbl&gt;</code></pre>
 </div>
 <div id="dimension-x-priority-x-experiment_id" class="section level2" number="3.4">
 <h2 number="3.4"><span class="header-section-number">3.4</span> dimension x priority x experiment_ID</h2>
 <pre class="r"><code>overview %&gt;% 
   group_by(dimension, priority, experiment_id) %&gt;% 
   summarise_at(&quot;file_size_MB&quot;, sum, na.rm = TRUE)</code></pre>
-<pre><code># A tibble: 20 x 4
-# Groups:   dimension, priority [5]
-   dimension priority experiment_id file_size_MB
-   &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;
- 1 2D               1 A                    1820.
- 2 2D               1 B                    1820.
- 3 2D               1 C                    1820.
- 4 2D               1 D                    1820.
- 5 2D               2 A                    1698.
- 6 2D               2 B                    1698.
- 7 2D               2 C                    1698.
- 8 2D               2 D                    1698.
- 9 2D               3 A                     121.
-10 2D               3 B                     121.
-11 2D               3 C                     121.
-12 2D               3 D                     121.
-13 3D               1 A                    3032.
-14 3D               1 B                    3032.
-15 3D               1 C                    3032.
-16 3D               1 D                    3032.
-17 3D               2 A                    2426 
-18 3D               2 B                    2426 
-19 3D               2 C                    2426 
-20 3D               2 D                    2426 </code></pre>
+<pre><code># A tibble: 0 x 4
+# Groups:   dimension, priority [0]
+# … with 4 variables: dimension &lt;chr&gt;, priority &lt;dbl&gt;, experiment_id &lt;chr&gt;,
+#   file_size_MB &lt;dbl&gt;</code></pre>
 </div>
 <div id="custom-2d-phy-vs-bio" class="section level2" number="3.5">
 <h2 number="3.5"><span class="header-section-number">3.5</span> Custom: 2D phy vs bio</h2>
@@ -1996,13 +1975,9 @@ overview %&gt;%
 overview %&gt;% 
   group_by(tar, dimension) %&gt;% 
   summarise_at(&quot;file_size_MB&quot;, sum, na.rm = TRUE)</code></pre>
-<pre><code># A tibble: 3 x 3
-# Groups:   tar [2]
-  tar      dimension file_size_MB
-  &lt;chr&gt;    &lt;chr&gt;            &lt;dbl&gt;
-1 phy_surf 2D               6793.
-2 rest     2D               7763.
-3 rest     3D              21834 </code></pre>
+<pre><code># A tibble: 0 x 3
+# Groups:   tar [0]
+# … with 3 variables: tar &lt;chr&gt;, dimension &lt;chr&gt;, file_size_MB &lt;dbl&gt;</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">

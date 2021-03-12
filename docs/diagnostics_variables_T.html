@@ -560,16 +560,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree3bd634e79977bd3ec639c1023d8d09905d9d4fdctargetblank3bd634ea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/3bd634e79977bd3ec639c1023d8d09905d9d4fdc" target="_blank">3bd634e</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree415448d8694b0295c819d7687f02142d5c7a92e7targetblank415448da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/415448d8694b0295c819d7687f02142d5c7a92e7" target="_blank">415448d</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree3bd634e79977bd3ec639c1023d8d09905d9d4fdctargetblank3bd634ea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree415448d8694b0295c819d7687f02142d5c7a92e7targetblank415448da" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/3bd634e79977bd3ec639c1023d8d09905d9d4fdc" target="_blank">3bd634e</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/415448d8694b0295c819d7687f02142d5c7a92e7" target="_blank">415448d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -581,6 +581,7 @@ Ignored files:
 
 Unstaged changes:
     Modified:   code/Workflowr_project_managment.R
+    Modified:   data/overview/overview_files.csv
 
 </code></pre>
 <p>
@@ -619,6 +620,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/415448d8694b0295c819d7687f02142d5c7a92e7/analysis/diagnostics_variables_T.Rmd" target="_blank">415448d</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+<td>
+rebuild all with March2021_v2 data version
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/92e996ccb768726f7d781eadbeafd9fa765ce6a6/docs/diagnostics_variables_T.html" target="_blank">92e996c</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -862,7 +897,7 @@ experiment_IDs &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot
     file &lt;- paste(&quot;fgco2_glob&quot;,
                   &quot;_CESM-ETHZ_&quot;,
                   i_experiment_ID,
-                  &quot;_1_gr_1980-2018.nc&quot;,
+                  &quot;_1_gr_1980-2018_v20210312.nc&quot;,
                   sep = &quot;&quot;)
     print(file)
     
@@ -886,7 +921,7 @@ experiment_IDs &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot
             labs(title = paste(&quot;experiment_ID:&quot;, i_experiment_ID)))
 
 }</code></pre>
-<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_A_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/globally_integrated_2D_variables-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-globally_integrated_2D_variables-1">
@@ -925,7 +960,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_B_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/globally_integrated_2D_variables-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-globally_integrated_2D_variables-2">
@@ -964,7 +999,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_C_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/globally_integrated_2D_variables-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-globally_integrated_2D_variables-3">
@@ -1003,7 +1038,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_D_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_glob_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/globally_integrated_2D_variables-4.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-globally_integrated_2D_variables-4">
@@ -1050,7 +1085,7 @@ jens-daniel-mueller
   file &lt;- paste(&quot;fgco2_reg&quot;,
                 &quot;_CESM-ETHZ_&quot;,
                 i_experiment_ID,
-                &quot;_1_gr_1980-2018.nc&quot;,
+                &quot;_1_gr_1980-2018_v20210312.nc&quot;,
                 sep = &quot;&quot;)
   print(file)
   
@@ -1083,7 +1118,7 @@ jens-daniel-mueller
   )
   
 }</code></pre>
-<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_A_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-1">
@@ -1155,7 +1190,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_B_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-2">
@@ -1238,7 +1273,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_C_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-3">
@@ -1321,7 +1356,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_D_1_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_reg_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_T.Rmd/regionally_integrated_2D_variables-4.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-regionally_integrated_2D_variables-4">
