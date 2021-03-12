@@ -444,7 +444,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Overview XYZT variables</h1>
 <h4 class="author">Jens Daniel Müller</h4>
-<h4 class="date">03 March, 2021</h4>
+<h4 class="date">12 March, 2021</h4>
 
 </div>
 
@@ -469,7 +469,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-03-03
+<strong>Last updated:</strong> 2021-03-12
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -560,16 +560,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreeeafc75c64917c3f27f6a0459d5d861075a0d4456targetblankeafc75ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/eafc75c64917c3f27f6a0459d5d861075a0d4456" target="_blank">eafc75c</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreed4987b6cc63d2332334fae5e15e567456f6a7baatargetblankd4987b6a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/d4987b6cc63d2332334fae5e15e567456f6a7baa" target="_blank">d4987b6</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreeeafc75c64917c3f27f6a0459d5d861075a0d4456targetblankeafc75ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontreed4987b6cc63d2332334fae5e15e567456f6a7baatargetblankd4987b6a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/eafc75c64917c3f27f6a0459d5d861075a0d4456" target="_blank">eafc75c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/d4987b6cc63d2332334fae5e15e567456f6a7baa" target="_blank">d4987b6</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -578,15 +578,6 @@ Note that you need to be careful to ensure that all relevant files for the analy
 Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-
-Unstaged changes:
-    Modified:   analysis/_site.yml
-    Deleted:    code/README.md
-    Modified:   code/Workflowr_project_managment.R
-    Deleted:    data/README.md
-    Deleted:    data/overview/CESM_files.txt
-    Deleted:    data/overview/RECCAP2-ocean_data_products_overview - Model_submission_tar_levels.csv
-    Deleted:    output/README.md
 
 </code></pre>
 <p>
@@ -625,6 +616,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/d4987b6cc63d2332334fae5e15e567456f6a7baa/analysis/diagnostics_variables_ancillary.Rmd" target="_blank">d4987b6</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+<td>
+adapt March2021 data version
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/a074aa8a7103c64adc98bdf8cd893cbfedc0f952/docs/diagnostics_variables_ancillary.html" target="_blank">a074aa8</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-03
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -758,10 +783,10 @@ i_variable</code></pre>
 <pre><code>[1] &quot;Atm_CO2&quot;</code></pre>
 <pre class="r"><code># read list of all files
 file &lt;- paste(i_variable,
-              &quot;_CESM-ETHZ_gr_1980-2018.nc&quot;,
+              &quot;_CESM-ETHZ_1_gr_1980-2018.nc&quot;,
               sep = &quot;&quot;)
 print(file)</code></pre>
-<pre><code>[1] &quot;Atm_CO2_CESM-ETHZ_gr_1980-2018.nc&quot;</code></pre>
+<pre><code>[1] &quot;Atm_CO2_CESM-ETHZ_1_gr_1980-2018.nc&quot;</code></pre>
 <pre class="r"><code># read in data
 variable_data &lt;-
   tidync(paste(path_cmorized_annual,
@@ -823,11 +848,11 @@ jens-daniel-mueller
 <pre class="r"><code>variables &lt;- c(&quot;volume&quot;, &quot;mask_vol&quot;)
 
 for (i_variable in variables) {
-  # i_variable &lt;- variables[2]
+  # i_variable &lt;- variables[1]
   
   # read list of all files
   file &lt;- paste(i_variable,
-                &quot;_CESM-ETHZ_gr.nc&quot;,
+                &quot;_CESM-ETHZ_1_gr.nc&quot;,
                 sep = &quot;&quot;)
   print(file)
   
@@ -859,7 +884,7 @@ for (i_variable in variables) {
   )
   
 }</code></pre>
-<pre><code>[1] &quot;volume_CESM-ETHZ_gr.nc&quot;</code></pre>
+<pre><code>[1] &quot;volume_CESM-ETHZ_1_gr.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_ancillary.Rmd/XYZ_variables-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-XYZ_variables-1">
@@ -936,7 +961,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;mask_vol_CESM-ETHZ_gr.nc&quot;</code></pre>
+<pre><code>[1] &quot;mask_vol_CESM-ETHZ_1_gr.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_ancillary.Rmd/XYZ_variables-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-XYZ_variables-3">
@@ -1020,11 +1045,11 @@ jens-daniel-mueller
 
 
 for (i_variable in variables) {
-  # i_variable &lt;- variables[2]
+  # i_variable &lt;- variables[1]
   
   # read list of all files
   file &lt;- paste(i_variable,
-                &quot;_CESM-ETHZ_gr.nc&quot;,
+                &quot;_CESM-ETHZ_1_gr.nc&quot;,
                 sep = &quot;&quot;)
   print(file)
   
@@ -1050,7 +1075,7 @@ for (i_variable in variables) {
   )
 
 }</code></pre>
-<pre><code>[1] &quot;area_CESM-ETHZ_gr.nc&quot;</code></pre>
+<pre><code>[1] &quot;area_CESM-ETHZ_1_gr.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_ancillary.Rmd/XY_variables-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-XY_variables-1">
@@ -1089,7 +1114,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;mask_sfc_CESM-ETHZ_gr.nc&quot;</code></pre>
+<pre><code>[1] &quot;mask_sfc_CESM-ETHZ_1_gr.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_ancillary.Rmd/XY_variables-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-XY_variables-2">
@@ -1139,11 +1164,9 @@ for (i_variable in variables) {
   
   # read list of all files
   file &lt;- paste(i_variable,
-                &quot;_CESM-ETHZ_gr.nc&quot;,
+                &quot;_CESM-ETHZ_1_gr.nc&quot;,
                 sep = &quot;&quot;)
   print(file)
-  
-  library(ncdf4)
   
   # read in data
   variable_data &lt;-
@@ -1154,10 +1177,10 @@ for (i_variable in variables) {
   
   print(ncvar_get(variable_data))
 }</code></pre>
-<pre><code>[1] &quot;Area_tot_native_CESM-ETHZ_gr.nc&quot;
-[1] 3.611402e+14
-[1] &quot;Vol_tot_native_CESM-ETHZ_gr.nc&quot;
-[1] 1.32514e+18</code></pre>
+<pre><code>[1] &quot;Area_tot_native_CESM-ETHZ_1_gr.nc&quot;
+[1] 0
+[1] &quot;Vol_tot_native_CESM-ETHZ_1_gr.nc&quot;
+[1] 1.324394e+18</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1186,11 +1209,11 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] ncdf4_1.17      tidync_0.2.4    stars_0.4-3     sf_0.9-6       
- [5] abind_1.4-5     metR_0.9.0      scico_1.2.0     patchwork_1.1.1
- [9] collapse_1.5.0  forcats_0.5.0   stringr_1.4.0   dplyr_1.0.2    
-[13] purrr_0.3.4     readr_1.4.0     tidyr_1.1.2     tibble_3.0.4   
-[17] ggplot2_3.3.2   tidyverse_1.3.0 workflowr_1.6.2
+ [1] units_0.6-7     ncdf4_1.17      tidync_0.2.4    stars_0.4-3    
+ [5] sf_0.9-6        abind_1.4-5     metR_0.9.0      scico_1.2.0    
+ [9] patchwork_1.1.1 collapse_1.5.0  forcats_0.5.0   stringr_1.4.0  
+[13] dplyr_1.0.2     purrr_0.3.4     readr_1.4.0     tidyr_1.1.2    
+[17] tibble_3.0.4    ggplot2_3.3.2   tidyverse_1.3.0 workflowr_1.6.2
 
 loaded via a namespace (and not attached):
  [1] fs_1.5.0                 lubridate_1.7.9          httr_1.4.2              
@@ -1217,7 +1240,7 @@ loaded via a namespace (and not attached):
 [64] assertthat_0.2.1         xfun_0.18                lwgeom_0.2-5            
 [67] broom_0.7.2              RcppEigen_0.3.3.7.0      e1071_1.7-4             
 [70] later_1.1.0.1            class_7.3-17             viridisLite_0.3.0       
-[73] units_0.6-7              ellipsis_0.3.1          </code></pre>
+[73] ellipsis_0.3.1          </code></pre>
 </div>
 </div>
 </div>
