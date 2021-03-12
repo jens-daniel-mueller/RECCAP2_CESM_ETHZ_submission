@@ -60,6 +60,7 @@ Plots for all variables are shown one after the other for the model runs:
 
 - `r experiment_IDs`
 
+## fgco2_glob
 
 ```{r globally_integrated_2D_variables, fig.asp=0.5}
 
@@ -97,8 +98,9 @@ for (i_experiment_ID in experiment_IDs) {
 ```
 
 
-```{r regionally_integrated_2D_variables, fig.asp=1}
+## fgco2_reg
 
+```{r regionally_integrated_2D_variables, fig.asp=1}
 
 for (i_experiment_ID in experiment_IDs) {
   # read list of all files
@@ -127,13 +129,15 @@ for (i_experiment_ID in experiment_IDs) {
   # remove open link to nc file
   rm(variable_data)
   
-  print(variable_data_tibble %>%
-          ggplot(aes(time_mon,
-                     fgco2_reg)) +
-          geom_hline(yintercept = 0, col = "red") +
-          geom_path() +
-          labs(title = paste("experiment_ID:", i_experiment_ID))) +
-    facet_grid(regions ~ .)
+  print(
+    variable_data_tibble %>%
+      ggplot(aes(time_mon,
+                 fgco2_reg)) +
+      geom_hline(yintercept = 0, col = "red") +
+      geom_path() +
+      labs(title = paste("experiment_ID:", i_experiment_ID)) +
+      facet_grid(regions ~ .)
+  )
   
 }
 
