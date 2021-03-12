@@ -20,7 +20,7 @@ wflow_publish(here::here("analysis",
                            "diagnostics_variables_XYZT.Rmd",
                            "diagnostics_variables_ancillary.Rmd"
                          )),
-              message = "rebuild all with ancillary variables",
+              message = "rebuild all with March2021_v2 data version",
               republish = TRUE)
 
 # Push latest version to GitHub
