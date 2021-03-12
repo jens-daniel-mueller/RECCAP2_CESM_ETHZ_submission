@@ -28,6 +28,8 @@ path_cmorized_annual <-
 ```{r load_libraries_specific, include=FALSE}
 library(stars)
 library(tidync)
+library(units)
+    
 ```
 
 # File names
@@ -41,7 +43,6 @@ variables <-
   overview %>%
   filter(shape == "XYT") %>%
   distinct(variable_id) %>%
-  # mutate(variable_id = if_else(variable_id == "pco2atm", "atmpco2", variable_id)) %>%
   pull()
 
 # set name of model to be subsetted
@@ -79,13 +80,17 @@ for (i_experiment_ID in experiment_IDs) {
     
     # read in data
     variable_data <-
-      tidync(paste(path_cmorized_annual,
+      read_ncdf(paste(path_cmorized_annual,
                    file,
                    sep = ""))
-    
+
     # convert to tibble
     variable_data_tibble <- variable_data %>%
-      hyper_tibble()
+      as_tibble()
+    
+    # drop units for plotting
+    variable_data_tibble <- variable_data_tibble %>% 
+      drop_units()
     
     # remove open link to nc file
     rm(variable_data)
@@ -109,8 +114,8 @@ for (i_experiment_ID in experiment_IDs) {
     print(
       variable_data_tibble_climatology %>%
         ggplot(aes(lon, lat, fill = !!sym(i_variable))) +
-        geom_raster() +
-        scale_fill_viridis_c() +
+        geom_raster(na.rm = TRUE) +
+        scale_fill_viridis_c(na.value=NA) +
         coord_quickmap(expand = 0) +
         facet_wrap( ~ parameter, ncol = 2) +
         theme(axis.title = element_blank()) +
