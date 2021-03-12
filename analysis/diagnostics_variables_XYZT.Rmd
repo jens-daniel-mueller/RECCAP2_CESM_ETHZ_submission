@@ -125,17 +125,17 @@ for (i_experiment_ID in experiment_IDs) {
     )
     
     
-    # print(
-    #   variable_data_tibble %>%
-    #     ggplot(aes(!!sym(i_variable), depth)) +
-    #     geom_bin2d(bins = 100) +
-    #     scale_y_reverse()  +
-    #     scale_fill_viridis_c() +
-    #     labs(
-    #       title = paste("experiment_ID:", i_experiment_ID)
-    #     )
-    # )
-    
+    print(
+      variable_data_tibble %>%
+        ggplot(aes(!!sym(i_variable), depth)) +
+        geom_bin2d(bins = 100) +
+        scale_y_reverse()  +
+        scale_fill_viridis_c() +
+        labs(
+          title = paste("experiment_ID:", i_experiment_ID)
+        )
+    )
+
   }
 }
 
