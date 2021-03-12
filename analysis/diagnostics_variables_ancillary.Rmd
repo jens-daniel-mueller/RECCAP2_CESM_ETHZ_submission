@@ -23,13 +23,15 @@ editor_options:
 ```{r set_paths, include=FALSE}
 
 path_cmorized_annual <-
-  "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_Dec2020/split/"
+  "/nfs/kryo/work/loher/CESM_output/RECCAP2/submit_March2021/"
 
 ```
 
 ```{r load_libraries_specific, include=FALSE}
 library(stars)
 library(tidync)
+library(ncdf4)
+library(units)
 ```
 
 # File names
@@ -64,7 +66,7 @@ i_variable
 
 # read list of all files
 file <- paste(i_variable,
-              "_CESM-ETHZ_gr_1980-2018.nc",
+              "_CESM-ETHZ_1_gr_1980-2018.nc",
               sep = "")
 print(file)
 
@@ -96,11 +98,11 @@ variable_data_tibble %>%
 variables <- c("volume", "mask_vol")
 
 for (i_variable in variables) {
-  # i_variable <- variables[2]
+  # i_variable <- variables[1]
   
   # read list of all files
   file <- paste(i_variable,
-                "_CESM-ETHZ_gr.nc",
+                "_CESM-ETHZ_1_gr.nc",
                 sep = "")
   print(file)
   
@@ -135,7 +137,6 @@ for (i_variable in variables) {
 
 ```
 
-
 ## XY shape variables
 
 ```{r XY_variables}
@@ -144,11 +145,11 @@ variables <- c("area", "mask_sfc")
 
 
 for (i_variable in variables) {
-  # i_variable <- variables[2]
+  # i_variable <- variables[1]
   
   # read list of all files
   file <- paste(i_variable,
-                "_CESM-ETHZ_gr.nc",
+                "_CESM-ETHZ_1_gr.nc",
                 sep = "")
   print(file)
   
@@ -189,11 +190,9 @@ for (i_variable in variables) {
   
   # read list of all files
   file <- paste(i_variable,
-                "_CESM-ETHZ_gr.nc",
+                "_CESM-ETHZ_1_gr.nc",
                 sep = "")
   print(file)
-  
-  library(ncdf4)
   
   # read in data
   variable_data <-
