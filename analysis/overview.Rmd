@@ -69,14 +69,15 @@ path_CESM
 
 # create list of CESM output files and sizes
 
-CESM_files_names <- list.files(path = path_CESM)
+CESM_files_names <- list.files(path = path_CESM,
+                               pattern = ".nc")
 CESM_files_sizes <-
   file.size(paste(path_CESM, CESM_files_names, sep = "/"))
 
 CESM_files <- bind_cols(file_name = CESM_files_names,
                         file_size_MB = round(CESM_files_sizes * 1e-6, 1))
 
-rm(path_CESM, CESM_files_names, CESM_files_sizes)
+rm(CESM_files_names, CESM_files_sizes)
 
 # extract variable_id and experiment_id from file name
 CESM_files <- CESM_files %>%
@@ -136,6 +137,30 @@ overview %>%
                fns = list(total = "sum"))
 
 ```
+
+## Submission tar files
+
+```{r CESM_submission_files_list}
+
+# create list of CESM output files and sizes
+
+CESM_files_names_tar <- list.files(path = path_CESM,
+                                   pattern = ".tar")
+CESM_files_sizes_tar <-
+  file.size(paste(path_CESM, CESM_files_names_tar, sep = "/"))
+
+CESM_files_tar <- bind_cols(
+  file_name = CESM_files_names_tar,
+  file_size_GB = round(CESM_files_sizes_tar * 1e-9, 1))
+
+rm(path_CESM, CESM_files_names_tar, CESM_files_sizes_tar)
+
+# extract variable_id and experiment_id from file name
+CESM_files_tar
+
+
+```
+
 
 
 #  Compare tar variants

@@ -7,7 +7,7 @@
 # Repeated comments during work on the project ----------------------------
 
 # commit regular changes (locally) and rebuild site
-wflow_publish(all = TRUE, message = "adapt March2021 data version")
+wflow_publish(all = TRUE, message = "include tarred files")
 
 # commit changes including _site.yml (locally) and rebuild site in the specified order
 wflow_publish(here::here("analysis",
