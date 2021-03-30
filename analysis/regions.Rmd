@@ -32,23 +32,23 @@ library(tidync)
 
 # Overview
 
-In the following, I plot the content of three region mask files prepared by Luke Gregor for the analysis within RECCAP2-ocean:
+Three region mask files prepared by Luke Gregor for the analysis within RECCAP2-ocean are available:
 
 1.  `RECCAP2_region_masks_all.nc`
 2.  `RECCAP2_openocean_1deg.nc`
 3.  `RECCAP2_coastal_MARCAT_1deg.nc`
 
-Please note that the content of 2. an 3. should be identical to the fields `open_ocean` and `coastal_MARCAT` contained in 3.
+Please note that the content of 2. an 3. should be identical to the fields `open_ocean` and `coastal_MARCAT` contained in 3. Accordingly, files 2. and 3. are not required for the analysis. In the following, I plot the content of 1.
 
-For the submission, spatially resolved surface fluxes of CO2 should be integrated across the entire `open_ocean` region for fco2_glob, and across the indices 1-5 of the `open_ocean` region for fco2_reg,
+For the submission, spatially resolved surface fluxes of CO2 should be integrated across the entire `open_ocean` region for `fco2_glob`, and across the indices 1-5 of the `open_ocean` region for `fco2_reg`,
+
+# File: region_masks_all
+
+## Seamask
 
 Please note that the `seamask` provided within 3. is not identical to the `open_ocean` region and should not be used for data analysis.
 
-# Plots
-
-## region_masks_all
-
-```{r region_masks_all}
+```{r region_masks_all_seamask}
 
 region_masks_all <-
   read_ncdf(paste(path_basin_mask, "RECCAP2_region_masks_all.nc", sep = "")) %>%
@@ -62,6 +62,15 @@ region_masks_all %>%
   geom_raster() +
   coord_quickmap(expand = 0)
 
+
+```
+
+## Regions
+
+Below, the open ocean regions used to calculate `fgco2_reg` are displayed. Please note that the `coastal_marcats` regions is covered by the other regions.
+
+```{r region_masks_all_regions}
+
 region_masks_all_seamask <- region_masks_all %>%
   select(lat, lon, seamask)
 
@@ -74,8 +83,6 @@ region_masks_all <- region_masks_all %>%
                values_to = "value") %>%
   mutate(value = as.factor(value))
 
-unique(region_masks_all$value)
-
 region_masks_all %>%
   filter(value != 0) %>%
   ggplot(aes(lon, lat, fill = region)) +
@@ -83,12 +90,14 @@ region_masks_all %>%
   scale_fill_brewer(palette = "Dark2") +
   coord_quickmap(expand = 0)
 
-region_masks_all %>%
-  filter(value != 0) %>%
-  ggplot(aes(lon, lat, fill = value)) +
-  geom_raster() +
-  coord_quickmap(expand = 0) +
-  labs(title = "all regions")
+
+```
+
+## Sub-regions
+
+Each open ocean region consists of several subregions with indices for further regionalization.
+
+```{r region_masks_all_subregions}
 
 region_masks_all %>%
   filter(value != 0) %>%
@@ -103,89 +112,15 @@ region_masks_all %>%
       labs(title = paste("region:", unique(.x$region)))
   )
 
-ggplot() +
-  geom_raster(data = region_masks_all %>% filter(value != 0),
-              aes(lon, lat, fill = region)) +
-  geom_raster(data = region_masks_all_seamask %>% filter(seamask == 1),
-              aes(lon, lat))+
-  coord_quickmap(expand = 0)
+```
 
+# Write csv file
+
+```{r write_mask_to_csv}
 
 region_masks_all %>% 
   write_csv("data/regions/RECCAP2_region_masks_all_clean.cvs")
 
 ```
 
-## openocean_1deg
 
-```{r openocean_1deg}
-
-openocean_1deg <-
-  read_ncdf(paste(path_basin_mask, "RECCAP2_openocean_1deg.nc", sep = "")) %>%
-  as_tibble()
-
-openocean_1deg <- openocean_1deg %>%
-  mutate_at(vars("reccap2_ocean_regions":"seamask"), as.factor)
-
-openocean_1deg %>%
-  ggplot(aes(lon, lat, fill = reccap2_ocean_regions)) +
-  geom_raster() +
-  scale_fill_brewer(palette = "Dark2") +
-  coord_quickmap(expand = 0)
-
-openocean_1deg_seamask <- openocean_1deg %>%
-  select(lat, lon, seamask)
-
-ggplot() +
-  geom_raster(data = openocean_1deg %>%
-                filter(seamask != 0),
-              aes(lon, lat, fill = "seamask")) +
-  geom_raster(data = openocean_1deg %>%
-                filter(reccap2_ocean_regions != 0),
-              aes(lon, lat, fill = reccap2_ocean_regions)) +
-  scale_fill_brewer(palette = "Dark2") +
-  coord_quickmap(expand = 0)
-
-
-openocean_1deg <- openocean_1deg %>%
-  filter(reccap2_ocean_regions != 0) %>% 
-  select(-seamask)
-
-openocean_1deg <- openocean_1deg %>%
-  pivot_longer(atlantic:southern,
-               names_to = "region",
-               values_to = "value") %>%
-  filter(value != 0)
-
-ggplot() +
-  geom_raster(data = openocean_1deg_seamask %>%
-                filter(seamask == 0),
-              aes(lon, lat)) +
-  geom_raster(data = openocean_1deg,
-              aes(lon, lat, fill = value)) +
-  scale_fill_brewer(palette = "Dark2") +
-  coord_quickmap(expand = 0) +
-  facet_wrap(~region)
-
-```
-
-## RECCAP2_coastal_MARCAT_1deg
-
-```{r RECCAP2_coastal_MARCAT_1deg}
-
-RECCAP2_coastal_MARCAT_1deg <-
-  read_ncdf(paste(path_basin_mask, "RECCAP2_coastal_MARCAT_1deg.nc", sep = "")) %>%
-  as_tibble()
-
-RECCAP2_coastal_MARCAT_1deg <- RECCAP2_coastal_MARCAT_1deg %>%
-  rename("region" = "__xarray_dataarray_variable__") %>% 
-  filter(!is.na(region)) %>% 
-  mutate_at(vars("region"), as.factor)
-
-RECCAP2_coastal_MARCAT_1deg %>%
-  ggplot(aes(lon, lat, fill = region)) +
-  geom_raster() +
-  coord_quickmap(expand = 0)
-
-
-```
