@@ -444,7 +444,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Overview XYT variables</h1>
 <h4 class="author">Jens Daniel Müller</h4>
-<h4 class="date">12 March, 2021</h4>
+<h4 class="date">17 June, 2021</h4>
 
 </div>
 
@@ -469,7 +469,7 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-03-12
+<strong>Last updated:</strong> 2021-06-17
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -560,16 +560,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree415448d8694b0295c819d7687f02142d5c7a92e7targetblank415448da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/415448d8694b0295c819d7687f02142d5c7a92e7" target="_blank">415448d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree2fce56039030bc5b407fc01a5ec82c0ba36ebc9ftargetblank2fce560a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/2fce56039030bc5b407fc01a5ec82c0ba36ebc9f" target="_blank">2fce560</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree415448d8694b0295c819d7687f02142d5c7a92e7targetblank415448da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomjensdanielmuellerRECCAP2CESMETHZsubmissiontree2fce56039030bc5b407fc01a5ec82c0ba36ebc9ftargetblank2fce560a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/415448d8694b0295c819d7687f02142d5c7a92e7" target="_blank">415448d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/tree/2fce56039030bc5b407fc01a5ec82c0ba36ebc9f" target="_blank">2fce560</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -582,6 +582,7 @@ Ignored files:
 Unstaged changes:
     Modified:   code/Workflowr_project_managment.R
     Modified:   data/overview/overview_files.csv
+    Modified:   data/regions/RECCAP2_region_masks_all_clean.cvs
 
 </code></pre>
 <p>
@@ -620,6 +621,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/2fce56039030bc5b407fc01a5ec82c0ba36ebc9f/analysis/diagnostics_variables_XYT.Rmd" target="_blank">2fce560</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-06-17
+</td>
+<td>
+rebuild all with June2021 data before resubmission
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/diagnostics_variables_XYT.html" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -884,7 +919,7 @@ for (i_experiment_ID in experiment_IDs) {
     file &lt;- paste(i_variable,
                   &quot;_CESM-ETHZ_&quot;,
                   i_experiment_ID,
-                  &quot;_1_gr_1980-2018_v20210312.nc&quot;,
+                  &quot;_1_gr_1980-2018_v20210607.nc&quot;,
                   sep = &quot;&quot;)
     print(file)
     
@@ -971,7 +1006,7 @@ for (i_experiment_ID in experiment_IDs) {
     
   }
 }</code></pre>
-<pre><code>[1] &quot;alpha_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-1">
@@ -1092,7 +1127,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;chlos_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;chlos_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-3">
@@ -1213,7 +1248,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dfeos_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dfeos_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-5.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-5">
@@ -1334,7 +1369,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dissicos_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dissicos_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-7.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-7">
@@ -1455,7 +1490,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-9.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-9">
@@ -1576,7 +1611,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-11.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-11">
@@ -1697,7 +1732,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-13.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-13">
@@ -1818,7 +1853,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-15.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-15">
@@ -1939,7 +1974,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100hard_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100hard_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-17.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-17">
@@ -2060,7 +2095,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100soft_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100soft_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-19.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-19">
@@ -2181,7 +2216,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epcalc100_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epcalc100_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-21.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-21">
@@ -2302,7 +2337,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-23.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-23">
@@ -2423,7 +2458,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fice_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fice_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-25.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-25">
@@ -2544,7 +2579,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intdiac_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intdiac_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-27.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-27">
@@ -2665,7 +2700,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphyc_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphyc_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-29.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-29">
@@ -2786,7 +2821,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphynd_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphynd_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-31.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-31">
@@ -2907,7 +2942,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intpp_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intpp_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-33.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-33">
@@ -3028,7 +3063,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intzooc_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intzooc_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-35.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-35">
@@ -3149,7 +3184,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;Kw_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;Kw_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-37.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-37">
@@ -3270,7 +3305,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;mld_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;mld_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-39.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-39">
@@ -3391,7 +3426,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;no3os_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;no3os_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-41.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-41">
@@ -3512,7 +3547,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;o2os_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;o2os_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-43.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-43">
@@ -3633,7 +3668,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;pco2atm_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;pco2atm_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-45.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-45">
@@ -3754,7 +3789,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;po4os_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;po4os_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-47.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-47">
@@ -3875,7 +3910,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sios_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sios_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-49.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-49">
@@ -3996,7 +4031,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sos_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sos_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-51.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-51">
@@ -4117,7 +4152,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;spco2_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;spco2_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-53.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-53">
@@ -4141,6 +4176,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-53.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-53.png" target="_blank">9e9620a</a>
@@ -4203,6 +4249,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-54.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-54.png" target="_blank">9e9620a</a>
 </td>
 <td>
@@ -4238,7 +4295,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;talkos_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;talkos_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-55.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-55">
@@ -4359,7 +4416,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;tos_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;tos_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-57.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-57">
@@ -4480,7 +4537,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;zeu_CESM-ETHZ_A_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;zeu_CESM-ETHZ_A_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-59.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-59">
@@ -4601,7 +4658,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;alpha_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-61.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-61">
@@ -4722,7 +4779,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;chlos_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;chlos_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-63.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-63">
@@ -4843,7 +4900,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dfeos_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dfeos_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-65.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-65">
@@ -4964,7 +5021,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dissicos_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dissicos_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-67.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-67">
@@ -5085,7 +5142,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-69.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-69">
@@ -5206,7 +5263,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-71.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-71">
@@ -5327,7 +5384,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-73.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-73">
@@ -5448,7 +5505,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-75.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-75">
@@ -5569,7 +5626,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100hard_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100hard_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-77.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-77">
@@ -5690,7 +5747,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100soft_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100soft_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-79.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-79">
@@ -5811,7 +5868,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epcalc100_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epcalc100_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-81.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-81">
@@ -5932,7 +5989,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-83.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-83">
@@ -6053,7 +6110,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fice_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fice_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-85.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-85">
@@ -6174,7 +6231,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intdiac_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intdiac_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-87.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-87">
@@ -6295,7 +6352,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphyc_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphyc_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-89.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-89">
@@ -6416,7 +6473,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphynd_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphynd_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-91.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-91">
@@ -6537,7 +6594,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intpp_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intpp_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-93.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-93">
@@ -6658,7 +6715,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intzooc_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intzooc_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-95.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-95">
@@ -6779,7 +6836,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;Kw_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;Kw_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-97.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-97">
@@ -6900,7 +6957,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;mld_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;mld_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-99.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-99">
@@ -7021,7 +7078,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;no3os_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;no3os_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-101.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-101">
@@ -7142,7 +7199,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;o2os_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;o2os_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-103.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-103">
@@ -7263,7 +7320,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;pco2atm_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;pco2atm_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-105.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-105">
@@ -7384,7 +7441,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;po4os_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;po4os_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-107.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-107">
@@ -7505,7 +7562,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sios_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sios_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-109.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-109">
@@ -7626,7 +7683,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sos_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sos_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-111.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-111">
@@ -7747,7 +7804,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;spco2_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;spco2_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-113.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-113">
@@ -7771,6 +7828,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-113.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-113.png" target="_blank">9e9620a</a>
@@ -7833,6 +7901,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-114.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-114.png" target="_blank">9e9620a</a>
 </td>
 <td>
@@ -7868,7 +7947,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;talkos_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;talkos_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-115.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-115">
@@ -7989,7 +8068,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;tos_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;tos_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-117.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-117">
@@ -8110,7 +8189,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;zeu_CESM-ETHZ_B_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;zeu_CESM-ETHZ_B_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-119.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-119">
@@ -8231,7 +8310,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;alpha_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-121.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-121">
@@ -8352,7 +8431,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;chlos_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;chlos_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-123.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-123">
@@ -8473,7 +8552,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dfeos_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dfeos_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-125.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-125">
@@ -8594,7 +8673,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dissicos_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dissicos_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-127.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-127">
@@ -8715,7 +8794,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-129.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-129">
@@ -8836,7 +8915,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-131.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-131">
@@ -8957,7 +9036,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-133.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-133">
@@ -9078,7 +9157,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-135.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-135">
@@ -9199,7 +9278,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100hard_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100hard_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-137.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-137">
@@ -9320,7 +9399,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100soft_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100soft_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-139.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-139">
@@ -9441,7 +9520,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epcalc100_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epcalc100_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-141.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-141">
@@ -9562,7 +9641,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-143.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-143">
@@ -9683,7 +9762,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fice_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fice_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-145.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-145">
@@ -9804,7 +9883,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intdiac_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intdiac_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-147.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-147">
@@ -9925,7 +10004,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphyc_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphyc_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-149.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-149">
@@ -10046,7 +10125,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphynd_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphynd_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-151.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-151">
@@ -10167,7 +10246,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intpp_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intpp_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-153.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-153">
@@ -10288,7 +10367,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intzooc_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intzooc_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-155.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-155">
@@ -10409,7 +10488,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;Kw_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;Kw_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-157.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-157">
@@ -10530,7 +10609,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;mld_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;mld_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-159.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-159">
@@ -10651,7 +10730,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;no3os_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;no3os_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-161.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-161">
@@ -10772,7 +10851,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;o2os_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;o2os_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-163.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-163">
@@ -10893,7 +10972,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;pco2atm_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;pco2atm_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-165.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-165">
@@ -11014,7 +11093,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;po4os_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;po4os_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-167.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-167">
@@ -11135,7 +11214,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sios_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sios_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-169.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-169">
@@ -11256,7 +11335,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sos_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sos_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-171.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-171">
@@ -11377,7 +11456,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;spco2_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;spco2_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-173.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-173">
@@ -11401,6 +11480,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-173.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-173.png" target="_blank">9e9620a</a>
@@ -11463,6 +11553,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-174.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-174.png" target="_blank">9e9620a</a>
 </td>
 <td>
@@ -11498,7 +11599,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;talkos_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;talkos_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-175.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-175">
@@ -11619,7 +11720,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;tos_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;tos_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-177.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-177">
@@ -11740,7 +11841,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;zeu_CESM-ETHZ_C_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;zeu_CESM-ETHZ_C_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-179.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-179">
@@ -11861,7 +11962,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;alpha_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;alpha_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-181.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-181">
@@ -11982,7 +12083,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;chlos_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;chlos_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-183.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-183">
@@ -12103,7 +12204,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dfeos_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dfeos_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-185.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-185">
@@ -12224,7 +12325,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;dissicos_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;dissicos_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-187.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-187">
@@ -12345,7 +12446,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-189.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-189">
@@ -12466,7 +12567,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-191.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-191">
@@ -12587,7 +12688,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000hard_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-193.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-193">
@@ -12708,7 +12809,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc1000soft_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-195.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-195">
@@ -12829,7 +12930,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100hard_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100hard_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-197.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-197">
@@ -12950,7 +13051,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epc100soft_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epc100soft_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-199.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-199">
@@ -13071,7 +13172,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;epcalc100_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;epcalc100_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-201.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-201">
@@ -13192,7 +13293,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fgco2_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fgco2_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-203.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-203">
@@ -13313,7 +13414,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;fice_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;fice_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-205.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-205">
@@ -13434,7 +13535,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intdiac_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intdiac_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-207.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-207">
@@ -13555,7 +13656,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphyc_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphyc_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-209.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-209">
@@ -13676,7 +13777,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intphynd_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intphynd_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-211.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-211">
@@ -13797,7 +13898,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intpp_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intpp_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-213.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-213">
@@ -13918,7 +14019,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;intzooc_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;intzooc_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-215.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-215">
@@ -14039,7 +14140,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;Kw_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;Kw_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-217.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-217">
@@ -14160,7 +14261,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;mld_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;mld_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-219.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-219">
@@ -14281,7 +14382,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;no3os_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;no3os_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-221.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-221">
@@ -14402,7 +14503,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;o2os_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;o2os_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-223.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-223">
@@ -14523,7 +14624,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;pco2atm_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;pco2atm_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-225.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-225">
@@ -14644,7 +14745,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;po4os_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;po4os_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-227.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-227">
@@ -14765,7 +14866,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sios_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sios_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-229.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-229">
@@ -14886,7 +14987,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;sos_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;sos_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-231.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-231">
@@ -15007,7 +15108,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;spco2_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;spco2_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-233.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-233">
@@ -15031,6 +15132,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-233.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-233.png" target="_blank">9e9620a</a>
@@ -15082,6 +15194,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/de8d5250915bce6a8d1b81e0bc1038db3ee0db68/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-234.png" target="_blank">de8d525</a>
+</td>
+<td>
+jens-daniel-mueller
+</td>
+<td>
+2021-03-12
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/jens-daniel-mueller/RECCAP2_CESM_ETHZ_submission/blob/9e9620a51274039a54eb9ce67d93b2d513f687ad/docs/figure/diagnostics_variables_XYT.Rmd/2D_variables-234.png" target="_blank">9e9620a</a>
 </td>
 <td>
@@ -15106,7 +15229,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;talkos_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;talkos_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-235.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-235">
@@ -15205,7 +15328,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;tos_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;tos_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-237.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-237">
@@ -15304,7 +15427,7 @@ jens-daniel-mueller
 </table>
 </div>
 </div>
-<pre><code>[1] &quot;zeu_CESM-ETHZ_D_1_gr_1980-2018_v20210312.nc&quot;</code></pre>
+<pre><code>[1] &quot;zeu_CESM-ETHZ_D_1_gr_1980-2018_v20210607.nc&quot;</code></pre>
 <p><img src="figure/diagnostics_variables_XYT.Rmd/2D_variables-239.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-2D_variables-239">
@@ -15431,11 +15554,11 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] units_0.6-7     tidync_0.2.4    stars_0.4-3     sf_0.9-6       
+ [1] units_0.6-7     tidync_0.2.4    stars_0.5-2     sf_0.9-8       
  [5] abind_1.4-5     metR_0.9.0      scico_1.2.0     patchwork_1.1.1
- [9] collapse_1.5.0  forcats_0.5.0   stringr_1.4.0   dplyr_1.0.2    
+ [9] collapse_1.5.0  forcats_0.5.0   stringr_1.4.0   dplyr_1.0.5    
 [13] purrr_0.3.4     readr_1.4.0     tidyr_1.1.2     tibble_3.0.4   
-[17] ggplot2_3.3.2   tidyverse_1.3.0 workflowr_1.6.2
+[17] ggplot2_3.3.3   tidyverse_1.3.0 workflowr_1.6.2
 
 loaded via a namespace (and not attached):
  [1] fs_1.5.0                 lubridate_1.7.9          httr_1.4.2              
@@ -15447,11 +15570,11 @@ loaded via a namespace (and not attached):
 [19] labeling_0.4.2           scales_1.1.1             checkmate_2.0.0         
 [22] classInt_0.4-3           digest_0.6.27            rmarkdown_2.5           
 [25] pkgconfig_2.0.3          htmltools_0.5.0          dbplyr_1.4.4            
-[28] rlang_0.4.9              readxl_1.3.1             rstudioapi_0.13         
+[28] rlang_0.4.10             readxl_1.3.1             rstudioapi_0.11         
 [31] generics_0.0.2           farver_2.0.3             jsonlite_1.7.1          
 [34] magrittr_1.5             ncmeta_0.3.0             Matrix_1.2-18           
 [37] Rcpp_1.0.5               munsell_0.5.0            fansi_0.4.1             
-[40] lifecycle_0.2.0          stringi_1.5.3            whisker_0.4             
+[40] lifecycle_1.0.0          stringi_1.5.3            whisker_0.4             
 [43] yaml_2.2.1               grid_4.0.3               blob_1.2.1              
 [46] parallel_4.0.3           promises_1.1.1           crayon_1.3.4            
 [49] lattice_0.20-41          haven_2.3.1              hms_0.5.3               
@@ -15460,7 +15583,7 @@ loaded via a namespace (and not attached):
 [58] data.table_1.13.2        modelr_0.1.8             vctrs_0.3.5             
 [61] httpuv_1.5.4             cellranger_1.1.0         gtable_0.3.0            
 [64] assertthat_0.2.1         xfun_0.18                lwgeom_0.2-5            
-[67] broom_0.7.2              RcppEigen_0.3.3.7.0      e1071_1.7-4             
+[67] broom_0.7.5              RcppEigen_0.3.3.7.0      e1071_1.7-4             
 [70] later_1.1.0.1            class_7.3-17             ncdf4_1.17              
 [73] viridisLite_0.3.0        ellipsis_0.3.1          </code></pre>
 </div>
