@@ -51,7 +51,7 @@ Please note that the `seamask` provided within 3. is not identical to the `open_
 ```{r region_masks_all_seamask}
 
 region_masks_all <-
-  read_ncdf(paste(path_basin_mask, "RECCAP2_region_masks_all.nc", sep = "")) %>%
+  read_ncdf(paste(path_basin_mask, "RECCAP2_region_masks_all_v20210412.nc", sep = "")) %>%
   as_tibble()
 
 region_masks_all <- region_masks_all %>%
