@@ -7,7 +7,7 @@
 # Repeated comments during work on the project ----------------------------
 
 # commit regular changes (locally) and rebuild site
-wflow_publish(all = TRUE, message = "cleaned outdated content")
+wflow_publish(all = TRUE, message = "updated region mask")
 
 # commit changes including _site.yml (locally) and rebuild site in the specified order
 wflow_publish(here::here("analysis",

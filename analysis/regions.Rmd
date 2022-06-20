@@ -21,7 +21,7 @@ editor_options:
 ```{r define_paths}
 
 path_basin_mask <-
-  "/nfs/kryo/work/updata/reccapv2/"
+  "/nfs/kryo/work/updata/reccap2/"
 
 ```
 
@@ -51,7 +51,7 @@ Please note that the `seamask` provided within 3. is not identical to the `open_
 ```{r region_masks_all_seamask}
 
 region_masks_all <-
-  read_ncdf(paste(path_basin_mask, "RECCAP2_region_masks_all_v20210412.nc", sep = "")) %>%
+  read_ncdf(paste(path_basin_mask, "RECCAP2_region_masks_all_v20220617.nc", sep = "")) %>%
   as_tibble()
 
 region_masks_all <- region_masks_all %>%
